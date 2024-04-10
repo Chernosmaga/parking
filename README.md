@@ -22,9 +22,12 @@ Java 17, Spring, Spring Security, Lombok, Hibernate, PostgreSQl, JUnit, Postman 
 ## Команда проекта
 
 [Сергей Черносмага](https://github.com/Chernosmaga)
+
 [Алеся Беседина](https://github.com/alesya87)
+
 [Михаил Горбов](https://github.com/marmeladov98)
-Игорь Попов
+
+[Игорь Попов](https://github.com/Qualiter)
 
 ## База данных проекта
 
