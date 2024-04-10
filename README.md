@@ -24,6 +24,7 @@ Java 17, Spring, Spring Security, Lombok, Hibernate, PostgreSQl, JUnit, Postman 
 [Сергей Черносмага](https://github.com/Chernosmaga)
 [Алеся Беседина](https://github.com/alesya87)
 [Михаил Горбов](https://github.com/marmeladov98)
+Игорь Попов
 
 ## База данных проекта
 
