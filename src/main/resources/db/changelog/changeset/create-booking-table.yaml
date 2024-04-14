@@ -1,58 +1,57 @@
 databaseChangeLog:
   - changeSet:
-      id: create-users
+      id: create-booking
       author: Sergey
       changes:
         - createTable:
-            tableName: users
+            tableName: bookings
             columns:
               - column:
                   name: id
                   type: bigint
                   autoIncrement: true
                   constraints:
-                    primaryKey: true
+                    primaryKey: false
                     nullable: false
               - column:
-                  name: name
+                  name: booker_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: booker_id
+                    references: users (id)
+              - column:
+                  name: spot_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: spot_id
+                    references: spots (id)
+              - column:
+                  name: start
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: end
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_tradable
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_paid
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: bill
                   type: varchar
-                  constraints:
-                    nullable: false
               - column:
-                  name: surname
-                  type: varchar
-                  constraints:
-                    nullable: false
-              - column:
-                  name: birthdate
-                  type: timestamp
-                  constraints:
-                    nullable: false
-              - column:
-                  name: registration_date
-                  type: timestamp
-                  constraints:
-                    nullable: false
-              - column:
-                  name: email
-                  type: varchar
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: phone
-                  type: varchar
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: password
-                  type: varchar
-                  constraints:
-                    nullable: false
-                    unique: true
-              - column:
-                  name: state
-                  type: varchar
+                  name: is_subscription
+                  type: boolean
                   constraints:
                     nullable: false
