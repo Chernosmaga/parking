@@ -29,8 +29,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingFullDto create(Long userId, BookingCreateDto booking) {
         User user = findUser(userId);
-        if (bookingRepository.existsByBookerAndSpot(user, "Dummy")
-                || bookingRepository.existsBySpot("Dummy")) {
+        if (bookingRepository.existsBySpot("Dummy")) {
             throw new AlreadyExistsException("The spot is already taken");
         }
         Booking thisBooking = bookingMapper.toBooking(booking);
