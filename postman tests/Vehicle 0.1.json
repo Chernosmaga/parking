@@ -1,0 +1,548 @@
+{
+  "info": {
+    "_postman_id": "5f8d151b-70e5-4d4b-a4a7-a8fe7c810d67",
+    "name": "Vehicle 0.1",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18063131",
+    "_collection_link": "https://crimson-star-477479.postman.co/workspace/My-Workspace~f126649b-c38a-4352-8153-d1f9a227c2f4/collection/18063131-5f8d151b-70e5-4d4b-a4a7-a8fe7c810d67?action=share&source=collection_link&creator=18063131"
+  },
+  "item": [
+    {
+      "name": "Create new vehicle",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(201);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": null,\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create new vehicle - Get exception if govNumber or vin already exists",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(404);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": null,\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create new vehicle - Get exception if required fields are empty",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(404);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": null,\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": null,\n    \"releaseYear\": null,\n    \"color\": null,\n    \"engineType\": null,\n    \"govNumber\": null\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update vehicle (all fields)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(201);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"color\": \"Black\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update vehicle (only color)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(201);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"color\": \"Red\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update vehicle (only govNumber)",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(201);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"govNumber\": \"Х228ХХ148\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update vehicle - Get excepton if vehicle doesn't exists",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(404);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"govNumber\": \"Х228ХХ148\"\n}\n",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/vehicles/999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get vehicleID",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(201);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vehicles/{id}",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "{id}"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get excepton if vehicleID doesn't exists",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "let serverResponse = pm.response;",
+              "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+              "        pm.response.to.have.status(404);",
+              "        pm.response.to.be.withBody;",
+              "        pm.response.to.be.json;",
+              "    }",
+              "); "
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "auth": {
+          "type": "basic",
+          "basic": [
+            {
+              "key": "password",
+              "value": "",
+              "type": "string"
+            },
+            {
+              "key": "username",
+              "value": "",
+              "type": "string"
+            }
+          ]
+        },
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8080/vehicles/999",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "vehicles",
+            "999"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}

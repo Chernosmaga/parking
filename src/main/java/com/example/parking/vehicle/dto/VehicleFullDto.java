@@ -19,7 +19,7 @@ public class VehicleFullDto {
     private String type;
     @NotBlank
     private String vin;
-    @Past
+    //@Past
     @NotBlank
     private String releaseYear;
     @NotBlank

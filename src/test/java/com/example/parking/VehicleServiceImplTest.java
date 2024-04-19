@@ -21,9 +21,9 @@ public class VehicleServiceImplTest {
     private final VehicleRepository vehicleRepository;
     private final VehicleService vehicleService;
 
-    private final VehicleFullDto car1 = new VehicleFullDto(null, "Форд Фокус 1" , CAR.toString(), "testvin", "2005", "Черный", "Паровой двигатель", "У199ХК96");
-    private final VehicleUpdateDto carUpdate = new VehicleUpdateDto(null, "Белый", "Т228УК77");
-    private final VehicleFullDto car2 = new VehicleFullDto(null, "Рено Логан", CAR.toString(), "testvin2", "2017", "Желтый", "Дизель", "Х777ХХ777");
+    private final VehicleFullDto car1 = new VehicleFullDto(null, "Форд Фокус 1" , CAR.toString(), "testvin", "2005", "Black", "Паровой двигатель", "У199ХК96");
+    private final VehicleUpdateDto carUpdate = new VehicleUpdateDto(null, "White", "Т228УК77");
+    private final VehicleFullDto car2 = new VehicleFullDto(null, "Рено Логан", CAR.toString(), "testvin2", "2017", "Yellow", "Дизель", "Х777ХХ777");
 
     @AfterEach
     void afterEch() {
