@@ -1,6 +1,7 @@
 package com.example.parking.vehicle.service;
 
 
+import com.example.parking.exception.AlreadyExistsException;
 import com.example.parking.exception.NotFoundException;
 import com.example.parking.vehicle.dto.VehicleFullDto;
 import com.example.parking.vehicle.dto.VehicleUpdateDto;
@@ -20,12 +21,15 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleFullDto create(VehicleFullDto vehicle) {
-        /*
+        /* Если транспорт с таким гос номером или vin уже есть, то привязываем его (если транспорт юзают 2 пользователя)
         if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
             Vehicle existingVehicle = vehicleMapper.toVehicle(vehicle);
             log.info("Транспортное средство уже присутствует в Базе: {}", existingVehicle);
             return vehicleMapper.toVehicleFullDto(existingVehicle);
         }*/
+        if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
+            throw new AlreadyExistsException("Транспортное средство с таким гос. номером или VIN номером уже зарегистрировано!");
+        }
         Vehicle newVehicle = vehicleMapper.toVehicle(vehicle);
         Vehicle saved = vehicleRepository.save(newVehicle);
         log.info("Транспортное средство успешно добавлено: {}", saved);

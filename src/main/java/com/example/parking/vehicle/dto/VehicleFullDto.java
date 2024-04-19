@@ -21,7 +21,7 @@ public class VehicleFullDto {
     private String vin;
     @Past
     @NotBlank
-    private LocalDate releaseYear;
+    private String releaseYear;
     @NotBlank
     private String color;
     @NotBlank
