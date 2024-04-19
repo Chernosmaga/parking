@@ -1,0 +1,58 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users
+      author: Sergey
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: true
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthdate
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: registration_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: phone
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: state
+                  type: varchar
+                  constraints:
+                    nullable: false

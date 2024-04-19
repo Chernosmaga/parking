@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * Custom error class to return via ExceptionHandler
+ */
 @Data
 @AllArgsConstructor
 public class ErrorResponse {
