@@ -2,6 +2,7 @@ package com.example.parking.enums;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+//import lombok.ToString;
 
 
 @Getter
@@ -14,11 +15,4 @@ public enum VehicleType {
     BUS("Автобус");
 
     private final String title;
-
-    @Override
-    public String toString() {
-        return "VehicleType{" +
-                "title='" + title + '\'' +
-                '}';
-    }
 }
