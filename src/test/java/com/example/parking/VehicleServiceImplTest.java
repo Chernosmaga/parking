@@ -12,6 +12,8 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import java.time.LocalDate;
+
 import static com.example.parking.enums.VehicleType.CAR;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -21,9 +23,9 @@ public class VehicleServiceImplTest {
     private final VehicleRepository vehicleRepository;
     private final VehicleService vehicleService;
 
-    private final VehicleFullDto car1 = new VehicleFullDto(null, "Форд Фокус 1" , CAR.toString(), "testvin", "2005", "Black", "Паровой двигатель", "У199ХК96");
+    private final VehicleFullDto car1 = new VehicleFullDto(null, "Форд Фокус 1" , CAR.toString(), "testvin",  LocalDate.of(2005, 1, 1), "Black", "Паровой двигатель", "У199ХК96");
     private final VehicleUpdateDto carUpdate = new VehicleUpdateDto(null, "White", "Т228УК77");
-    private final VehicleFullDto car2 = new VehicleFullDto(null, "Рено Логан", CAR.toString(), "testvin2", "2017", "Yellow", "Дизель", "Х777ХХ777");
+    private final VehicleFullDto car2 = new VehicleFullDto(null, "Рено Логан", CAR.toString(), "testvin2", LocalDate.of(2017, 1, 1), "Yellow", "Дизель", "Х777ХХ777");
 
     @AfterEach
     void afterEch() {
@@ -31,7 +33,7 @@ public class VehicleServiceImplTest {
     }
 
     @Test
-    void create_shouldCreateUser() {
+    void create_shouldCreateVehicle() {
         VehicleFullDto created = vehicleService.create(car1);
 
         assertNotNull(created);
@@ -44,22 +46,54 @@ public class VehicleServiceImplTest {
         assertEquals(car1.getGovNumber(), created.getGovNumber());
     }
 
+    // Не уверен, что корректно написал этот тест
     @Test
-    void create_shouldThrowExceptionIfColorExists() {
+    void create_shouldThrowExceptionIfRequiredFieldsAreEmpty() {
+        VehicleFullDto created = vehicleService.create(car1);
+        created.setModel(null);
+        created.setType(null);
+        created.setVin(null);
+        created.setReleaseYear(null);
+
+        created.setColor(null);
+        created.setEngineType(null);
+        created.setGovNumber(null);
+
+        assertNotNull(created);
+        assertThrows(AlreadyExistsException.class,
+                () -> vehicleService.create(created));
+    }
+
+    @Test
+    void create_shouldThrowExceptionIfReleaseYearIsInFuture() {
+        VehicleFullDto created = vehicleService.create(car1);
+        created.setReleaseYear(LocalDate.of(3024, 1, 1));
+
+        assertNotNull(created);
+        assertThrows(AlreadyExistsException.class,
+                () -> vehicleService.create(created));
+    }
+
+    @Test
+    void create_shouldThrowExceptionIfGovNumberExists() {
         vehicleService.create(car1);
-        car2.setColor(car1.getColor());
+        car2.setGovNumber(car1.getGovNumber());
 
         assertThrows(AlreadyExistsException.class,
                 () -> vehicleService.create(car2));
     }
 
     @Test
-    void create_shouldThrowExceptionIfGovNumberExists() {
+    void create_shouldThrowExceptionIfVinExists() {
         vehicleService.create(car1);
-        car2.setColor(car1.getGovNumber());
+        car2.setVin(car1.getVin());
 
-        assertThrows(AlreadyExistsException.class,
+        Exception exception = assertThrows(AlreadyExistsException.class,
                 () -> vehicleService.create(car2));
+
+        assertEquals(exception.getMessage(),
+                "The vehicle with the specified registration number or VIN has already been registered");
+
     }
 
     @Test
@@ -81,8 +115,12 @@ public class VehicleServiceImplTest {
     }
 
     @Test
-    void getData_shouldThrowExceptionIfNotExists() {
-        assertThrows(NotFoundException.class ,
+    void getData_shouldThrowExceptionIfVehicleIDNotExists() {
+        Exception exception = assertThrows(NotFoundException.class ,
                 () -> vehicleService.getData(999L));
+
+        assertEquals(exception.getMessage(),
+                "The vehicle wasn't found");
+
     }
 }

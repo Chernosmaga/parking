@@ -1,0 +1,53 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-vehicles
+      author: Mikhail
+      changes:
+        - createTable:
+            tableName: vehicles
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: true
+              - column:
+                  name: model
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: type
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: vin
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: release_year
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: color
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: engine_type
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: gov_number
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true

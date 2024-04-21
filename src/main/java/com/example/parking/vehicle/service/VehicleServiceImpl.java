@@ -21,37 +21,41 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleFullDto create(VehicleFullDto vehicle) {
-        /* Если транспорт с таким гос номером или vin уже есть, то привязываем его (если транспорт юзают 2 пользователя)
+        /* Если транспорт с таким гос номером или vin уже есть, то привязываем его (для кейсов, когда транспорт юзают 2 пользователя)
         if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
             Vehicle existingVehicle = vehicleMapper.toVehicle(vehicle);
             log.info("Транспортное средство уже присутствует в Базе: {}", existingVehicle);
             return vehicleMapper.toVehicleFullDto(existingVehicle);
         }*/
         if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
-            throw new AlreadyExistsException("Транспортное средство с таким гос. номером или VIN номером уже зарегистрировано!");
+            throw new AlreadyExistsException("The vehicle with the specified registration number or VIN has already been registered");
         }
         Vehicle newVehicle = vehicleMapper.toVehicle(vehicle);
         Vehicle saved = vehicleRepository.save(newVehicle);
-        log.info("Транспортное средство успешно добавлено: {}", saved);
+        log.info("The vehicle has been successfully created: {}", saved);
         return vehicleMapper.toVehicleFullDto(saved);
     }
 
     @Override
     public VehicleFullDto update(Long vehicleID, VehicleUpdateDto vehicle) {
-        Vehicle found = vehicleRepository.findById(vehicleID).orElseThrow(() -> new NotFoundException("Транспортное средство не найдено"));
+        Vehicle found = getVehicleByIdFromRepository(vehicleID);
         found.setColor(vehicle.getColor() != null ? vehicle.getColor() : found.getColor());
-        found.setVin(vehicle.getGovNumber() != null ? vehicle.getGovNumber() : found.getGovNumber());
+        found.setGovNumber(vehicle.getGovNumber() != null ? vehicle.getGovNumber() : found.getGovNumber());
 
         Vehicle saved = vehicleRepository.save(found);
-        log.info("Транспортное средство успешно обновлено: {}", saved);
+        log.info("Vehicle information has been successfully updated: {}", saved);
 
         return vehicleMapper.toVehicleFullDto(saved);
     }
 
     @Override
     public VehicleFullDto getData(Long vehicleID) {
-        Vehicle vehicle = vehicleRepository.findById(vehicleID).orElseThrow(() -> new NotFoundException("Транспортное средство не найдено"));
-        log.info("Пользователь запросил данные своего транспортного средства {}", vehicle);
+        Vehicle vehicle = getVehicleByIdFromRepository(vehicleID);
+        log.info("The user requested the data of his vehicle: {}", vehicle);
         return vehicleMapper.toVehicleFullDto(vehicle);
+    }
+
+    private Vehicle getVehicleByIdFromRepository(Long vehicleID) {
+        return vehicleRepository.findById(vehicleID).orElseThrow(() -> new NotFoundException("The vehicle wasn't found"));
     }
 }
