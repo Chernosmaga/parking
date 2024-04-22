@@ -3,6 +3,7 @@ package com.example.parking.user.dto;
 import com.example.parking.annotation.Phone;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -21,10 +22,9 @@ public class UserFullDto {
     @NotBlank
     private String surname;
     @Past
-    @NotBlank
+    @NotNull
     private LocalDate birthdate;
     @Email
-    @NotBlank
     private String email;
     @Phone
     @NotBlank

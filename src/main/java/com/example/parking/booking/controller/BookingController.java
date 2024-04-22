@@ -13,18 +13,17 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
  * Booking controller receives data
  */
 @RestController
-@RequestMapping("/bookings")
 @RequiredArgsConstructor
 public class BookingController {
     private final BookingService bookingService;
 
-    @PostMapping("/{userId}")
+    @PostMapping("/personal/bookings/{userId}")
     @ResponseStatus(CREATED)
     public BookingFullDto create(@PathVariable Long userId, @RequestBody BookingCreateDto booking) {
         return bookingService.create(userId, booking);
     }
 
-    @DeleteMapping("/{userId}/{bookingId}")
+    @DeleteMapping("/personal/bookings/{userId}/{bookingId}")
     @ResponseStatus(NO_CONTENT)
     public void cancel(@PathVariable Long userId, @PathVariable Long bookingId) {
         bookingService.cancel(userId, bookingId);

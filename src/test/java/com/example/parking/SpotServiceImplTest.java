@@ -18,7 +18,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
-public class UserServiceImplTest {
+public class SpotServiceImplTest {
     private final UserRepository userRepository;
     private final UserService userService;
     private final UserFullDto ivanov = new UserFullDto(null, "Ivan", "Ivanov",
