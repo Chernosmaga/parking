@@ -1,0 +1,65 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-spots
+      author: Igor
+      changes:
+        - createTable:
+            tableName: spots
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: numeric(9,7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: numeric(10,7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: spot_state
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_storeyed
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: floor
+                  type: smallint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: picture
+                  type: varchar(1000)
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_handicapped
+                  type: boolean
+                  constraints:
+                    nullable: false
+#              - column:
+#                  name: price
+#                  type: bigdecimal
+#              - column:
+#                  name: currency
+#                  type: varchar
+#              - column:
+#                  name: occupied_from
+#                  type: datetime
+#              - column:
+#                  name: occupied_to
+#                  type: datetime
+#              - column:
+#                  name: subscriber
+#                  type: bigint

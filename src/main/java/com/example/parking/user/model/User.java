@@ -31,4 +31,7 @@ public class User {
     private String password;
     @Enumerated(STRING)
     private State state;
+    @ManyToOne
+    @JoinColumn(name = "role_id")
+    private Role role;
 }

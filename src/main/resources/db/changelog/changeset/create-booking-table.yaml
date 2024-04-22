@@ -25,8 +25,8 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
-                    foreignKeyName: spot_id
-                    references: spots (id)
+#                    foreignKeyName: spot_id
+#                    references: spots (id)
               - column:
                   name: start
                   type: timestamp without time zone

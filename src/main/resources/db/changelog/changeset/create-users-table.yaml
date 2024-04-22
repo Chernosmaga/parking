@@ -12,7 +12,7 @@ databaseChangeLog:
                   autoIncrement: true
                   constraints:
                     primaryKey: true
-                    nullable: true
+                    nullable: false
               - column:
                   name: name
                   type: varchar
@@ -37,7 +37,7 @@ databaseChangeLog:
                   name: email
                   type: varchar
                   constraints:
-                    nullable: false
+                    nullable: true
                     unique: true
               - column:
                   name: phone
@@ -56,3 +56,10 @@ databaseChangeLog:
                   type: varchar
                   constraints:
                     nullable: false
+              - column:
+                  name: role_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: role_id
+                    references: roles (id)
