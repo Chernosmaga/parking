@@ -10,9 +10,18 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
+/**
+ * A service for downloading user information from the repository for Spring Security
+ */
 public class CustomUserDetailsService implements UserDetailsService {
     private final UserRepository userRepository;
 
+    /**
+     * Loads information about a user by their phone
+     * @param phone user phone
+     * @return UserDetails object provides user info
+     * @throws UsernameNotFoundException if the user with the specified name is not found
+     */
     @Override
     public UserDetails loadUserByUsername(String phone) throws UsernameNotFoundException {
         User user = userRepository.findByPhone(phone)

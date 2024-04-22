@@ -52,7 +52,6 @@ public class JWTAuthenticationFilter extends OncePerRequestFilter {
 
     /**
      * Extracts JWT from header
-     *
      * @param request HTTP-query object
      * @return JWT, if JWT exists in header "Authorization" started with "Bearer "; otherwise null
      */
