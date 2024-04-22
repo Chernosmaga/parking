@@ -30,7 +30,6 @@ public class AuthController {
     }
 
     @PostMapping(path = "/login")
-    @ResponseStatus(HttpStatus.OK)
     public UserAuthResponseDto login(@RequestBody LoginUserDto loginUserDto) {
         Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(
                 loginUserDto.getPhone(), loginUserDto.getPassword()));
