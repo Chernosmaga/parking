@@ -1,12 +1,13 @@
 package com.example.parking.spot.service;
 
-import com.example.parking.spot.dto.SpotFullDto;
-import com.example.parking.spot.dto.SpotUpdateDto;
+import com.example.parking.spot.dto.NewSpotRequestDto;
+import com.example.parking.spot.dto.SpotMainResponseDto;
+import com.example.parking.spot.dto.UpdateSpotRequestDto;
 
 public interface SpotService {
-    SpotFullDto create(SpotFullDto spotFullDto);
+    SpotMainResponseDto create(NewSpotRequestDto newSpotRequestDto);
 
-    SpotFullDto update(Long spotId, SpotUpdateDto spotUpdateDto);
+    SpotMainResponseDto update(Long spotId, UpdateSpotRequestDto updateSpotRequestDto);
 
-    SpotFullDto getData(Long spotId);
+    SpotMainResponseDto getData(Long spotId);
 }

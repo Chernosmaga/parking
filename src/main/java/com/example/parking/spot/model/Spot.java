@@ -5,6 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
+
 import static jakarta.persistence.EnumType.STRING;
 import static jakarta.persistence.GenerationType.IDENTITY;
 
@@ -17,8 +19,8 @@ public class Spot {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    private Long latitude;
-    private Long longitude;
+    private BigDecimal latitude;
+    private BigDecimal longitude;
     @Column(name = "spot_state", nullable = false)
     @Enumerated(STRING)
     private SpotState spotState;
