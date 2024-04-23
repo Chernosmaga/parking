@@ -9,4 +9,6 @@ import java.math.BigDecimal;
 @Repository
 public interface SpotRepository extends JpaRepository<Spot, Long> {
     Boolean existsByLatitudeAndLongitudeAndFloor(BigDecimal latitude, BigDecimal longitude, Short floor);
+
+    Boolean existsByLatitudeAndLongitudeAndFloorAndIdNot(BigDecimal latitude, BigDecimal longitude, Short floor, Long spotId);
 }

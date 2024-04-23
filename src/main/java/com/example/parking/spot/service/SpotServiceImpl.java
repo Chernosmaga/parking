@@ -42,7 +42,9 @@ public class SpotServiceImpl implements SpotService {
         BigDecimal longitude = isLongitudeInDto ? updateSpotRequestDto.getLongitude() : spotOriginal.getLongitude();
         short floor = isFloorInDto ? updateSpotRequestDto.getFloor() : spotOriginal.getFloor();
 
-        throwExceptionIfSpotExist(latitude, longitude, floor);
+        if (isLatitudeInDto || isLongitudeInDto || isFloorInDto) {
+            throwExceptionIfSpotExist(latitude, longitude, floor, spotId);
+        }
 
         if (isLatitudeInDto) {
             spotOriginal.setLatitude(latitude);
@@ -80,6 +82,12 @@ public class SpotServiceImpl implements SpotService {
     private void throwExceptionIfSpotExist(BigDecimal latitude, BigDecimal longitude, short floor) {
         if (spotRepository.existsByLatitudeAndLongitudeAndFloor(latitude, longitude, floor)) {
             throw new AlreadyExistsException("Spot with specified latitude, longitude, floor already exists");
+        }
+    }
+
+    private void throwExceptionIfSpotExist(BigDecimal latitude, BigDecimal longitude, short floor, Long spotId) {
+        if (spotRepository.existsByLatitudeAndLongitudeAndFloorAndIdNot(latitude, longitude, floor, spotId)) {
+            throw new AlreadyExistsException("Spot with specified latitude, longitude, floor and spotId already exists");
         }
     }
 
