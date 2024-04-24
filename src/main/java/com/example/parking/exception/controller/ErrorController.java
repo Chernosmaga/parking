@@ -3,6 +3,7 @@ package com.example.parking.exception.controller;
 import com.example.parking.exception.AlreadyExistsException;
 import com.example.parking.exception.NotFoundException;
 import com.example.parking.exception.model.ErrorResponse;
+import jakarta.validation.UnexpectedTypeException;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -48,7 +49,7 @@ public class ErrorController {
      * @return custom entity for exception with helpful information about error
      */
     @ExceptionHandler({MethodArgumentNotValidException.class, HttpMessageNotReadableException.class,
-            MethodArgumentTypeMismatchException.class})
+            MethodArgumentTypeMismatchException.class, UnexpectedTypeException.class})
     @ResponseStatus(BAD_REQUEST)
     public ErrorResponse handleBadRequestExceptions(final Exception exception) {
         return new ErrorResponse(exception.getMessage(), LocalDateTime.now(), "Data is invalid");

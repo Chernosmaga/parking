@@ -40,8 +40,8 @@ public class SecurityConfig {
                 .and()
                 .authorizeRequests()
                     .requestMatchers("/auth/**").permitAll()
-                    .requestMatchers(HttpMethod.PUT, "/admin/**").hasAnyRole(ADMIN.toString())
-                    .requestMatchers(HttpMethod.GET, "/personal/**").hasAnyRole(USER.toString(),
+                    .requestMatchers("/admin/**").hasAnyRole(ADMIN.toString())
+                    .requestMatchers("/personal/**").hasAnyRole(USER.toString(),
                         ADMIN.toString())
                 .and()
                 .httpBasic();
