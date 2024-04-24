@@ -28,6 +28,7 @@ public class SpotServiceImpl implements SpotService {
         Spot spotToSave = spotMapper.toSpot(newSpotRequestDto);
         spotToSave.setSpotState(SpotState.BLOCKED);
         Spot savedSpot = spotRepository.save(spotToSave);
+        log.info("An administrator has created a new parking spot : {}", savedSpot);
         return spotMapper.toSpotMainResponseDto(savedSpot);
     }
 
@@ -71,11 +72,13 @@ public class SpotServiceImpl implements SpotService {
         }
 
         Spot updatedSpot = spotRepository.save(spotOriginal);
+        log.info("An administrator has updated the parking spot {} : {}", spotId, updatedSpot);
         return spotMapper.toSpotMainResponseDto(updatedSpot);
     }
 
     public SpotMainResponseDto getData(Long spotId) {
         Spot foundSpot = findSpotOrThrowException(spotId);
+        log.info("An user has got the parking spot data {} : {}", spotId, foundSpot);
         return spotMapper.toSpotMainResponseDto(foundSpot);
     }
 
