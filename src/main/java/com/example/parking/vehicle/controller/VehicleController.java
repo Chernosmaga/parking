@@ -6,6 +6,7 @@ import com.example.parking.vehicle.service.VehicleService;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +18,8 @@ public class VehicleController {
     private final VehicleService vehicleService;
 
     @PostMapping
-    public VehicleFullDto create(@RequestBody @Valid VehicleFullDto vehicle) {
-        return vehicleService.create(vehicle);
+    public VehicleFullDto create(@RequestBody @Valid VehicleFullDto vehicle, Authentication authentication) {
+        return vehicleService.create(vehicle, authentication.getName());
     }
 
     @PatchMapping("/{vehicleID}")

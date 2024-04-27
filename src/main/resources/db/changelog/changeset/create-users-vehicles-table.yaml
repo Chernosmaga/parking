@@ -1,0 +1,24 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users-vehicles-table
+      author: Mikhail
+      changes:
+        - createTable:
+            tableName: users_vehicles
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    foreignKeyName: user_id
+                    references: users (id)
+                    nullable: false
+              - column:
+                  name: vehicle_id
+                  type: bigint
+                  constraints:
+                    primaryKey: true
+                    foreignKeyName: vehicle_id
+                    references: vehicles (id)
+                    nullable: false

@@ -5,7 +5,7 @@ import com.example.parking.vehicle.dto.VehicleUpdateDto;
 
 
 public interface VehicleService {
-    VehicleFullDto create(VehicleFullDto vehicle);
+    VehicleFullDto create(VehicleFullDto vehicle, String userPhone);
     VehicleFullDto update(Long vehicleID, VehicleUpdateDto vehicle);
     VehicleFullDto getData(Long vehicleID);
 }
