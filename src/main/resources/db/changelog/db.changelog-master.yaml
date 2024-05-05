@@ -1,4 +1,6 @@
 databaseChangeLog:
+#  - include:
+#      file: db/changelog/changeset/drop-all-tables.yaml
   - include:
       file: db/changelog/changeset/create-roles-table.yaml
   - include:

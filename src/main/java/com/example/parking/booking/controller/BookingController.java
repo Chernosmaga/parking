@@ -17,10 +17,10 @@ import static org.springframework.http.HttpStatus.NO_CONTENT;
 public class BookingController {
     private final BookingService bookingService;
 
-    @PostMapping("/personal/bookings/{userId}")
+    @PostMapping("/personal/bookings/{userId}/{spotId}/{vehicleId}")
     @ResponseStatus(CREATED)
-    public BookingFullDto create(@PathVariable Long userId, @RequestBody BookingCreateDto booking) {
-        return bookingService.create(userId, booking);
+    public BookingFullDto create(@PathVariable Long userId, @PathVariable Long spotId, @PathVariable Long vehicleId, @RequestBody BookingCreateDto booking) {
+        return bookingService.create(userId, spotId, vehicleId, booking);
     }
 
     @DeleteMapping("/personal/bookings/{userId}/{bookingId}")

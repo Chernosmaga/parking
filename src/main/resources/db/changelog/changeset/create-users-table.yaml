@@ -63,3 +63,7 @@ databaseChangeLog:
                     nullable: false
                     foreignKeyName: role_id
                     references: roles (id)
+        - sql:
+            sql: |
+              INSERT INTO users ("name", surname, birthdate, registration_date, email, phone, "password", state, role_id) 
+              VALUES ('Admin', 'Test', '1999-01-01', '2024-01-01', 'admin@parking.com', '+79999999999', '$2a$10$106sKoukPBLCGkWYgcqPve6k2a6Z9U4dKSjKDc6ZNWwVWvLs6IsRK', 'ACTIVE', 1);

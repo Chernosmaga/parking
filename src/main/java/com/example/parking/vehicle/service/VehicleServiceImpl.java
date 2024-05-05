@@ -12,7 +12,10 @@ import com.example.parking.vehicle.model.Vehicle;
 import com.example.parking.vehicle.repository.VehicleRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 @Slf4j
@@ -24,25 +27,32 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public VehicleFullDto create(VehicleFullDto vehicle, String userPhone) {
-        // Если транспорт с таким гос номером или vin уже есть, то привязываем его (для кейсов, когда транспорт юзают 2 пользователя)
-        if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
-            Vehicle existingVehicle = vehicleMapper.toVehicle(vehicle);
-            log.info("Транспортное средство уже присутствует в Базе: {}", existingVehicle);
-            return vehicleMapper.toVehicleFullDto(existingVehicle);
-        }
-        if (vehicleRepository.existsByGovNumberOrVin(vehicle.getGovNumber(), vehicle.getVin())) {
-            throw new AlreadyExistsException("The vehicle with the specified registration number or VIN has already been registered");
+
+        User user = userRepository.findByPhone(userPhone).orElseThrow(() -> new NotFoundException("User not found"));
+
+        // Если одно ТС юзают несеолько юзеров, то берем из репозитория уже существующую запись
+        Optional<Vehicle> existingVehicle = vehicleRepository.findByGovNumberAndVin(vehicle.getGovNumber(), vehicle.getVin());
+
+        if (existingVehicle.isPresent()) {
+            user.getVehicles().add(existingVehicle.get());
+            userRepository.save(user);
+            log.info("The vehicle is already present in the Database: {}", existingVehicle.get());
+
+            return vehicleMapper.toVehicleFullDto(existingVehicle.get());
         }
 
         Vehicle newVehicle = vehicleMapper.toVehicle(vehicle);
-        Vehicle saved = vehicleRepository.save(newVehicle);
-        User user = userRepository.findByPhone(userPhone).orElseThrow(() -> new NotFoundException("User not found"));
+        try {
+            Vehicle saved = vehicleRepository.save(newVehicle);
+            user.getVehicles().add(saved);
+            userRepository.save(user);
+            log.info("The vehicle has been successfully created: {}", saved);
 
-        user.getVehicles().add(saved);
-        userRepository.save(user);
+            return vehicleMapper.toVehicleFullDto(saved);
 
-        log.info("The vehicle has been successfully created: {}", saved);
-        return vehicleMapper.toVehicleFullDto(saved);
+        } catch (DataIntegrityViolationException exception) {
+            throw new AlreadyExistsException("The vehicle with the specified registration number or VIN has already been registered");
+        }
     }
 
     @Override
@@ -64,6 +74,7 @@ public class VehicleServiceImpl implements VehicleService {
         return vehicleMapper.toVehicleFullDto(vehicle);
     }
 
+    // Метод поиска ТС на гос. или VIN номерам
     private Vehicle getVehicleByIdFromRepository(Long vehicleID) {
         return vehicleRepository.findById(vehicleID).orElseThrow(() -> new NotFoundException("The vehicle wasn't found"));
     }

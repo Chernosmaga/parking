@@ -36,6 +36,5 @@ public class UserFullDto {
     @NotBlank
     @Length(min = 8, max = 32)
     private String password;
-    //@Mapping(source = "userVehicles", target = "vehicles")
     private Set<VehicleFullDto> vehicles;
 }

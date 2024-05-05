@@ -1,6 +1,8 @@
 package com.example.parking.booking.model;
 
+import com.example.parking.spot.model.Spot;
 import com.example.parking.user.model.User;
+import com.example.parking.vehicle.model.Vehicle;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -19,8 +21,14 @@ public class Booking {
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     @ManyToOne
+    @JoinColumn(name = "booker_id")
     private User booker;
-    private String spot;
+    @ManyToOne
+    @JoinColumn(name = "spot_id")
+    private Spot spot;
+    @ManyToOne
+    @JoinColumn(name = "vehicle_id")
+    private Vehicle vehicle;
     @Column(name = "start_time")
     private LocalDateTime start;
     @Column(name = "end_time")

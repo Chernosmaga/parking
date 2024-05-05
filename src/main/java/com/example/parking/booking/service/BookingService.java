@@ -10,10 +10,11 @@ public interface BookingService {
     /**
      * Creates spot's booking by particular user
      * @param userId booker's identifier
+     * @param spotId spot's identifier
      * @param booking the entity of booking
      * @return the full dto of booking with user's data
      */
-    BookingFullDto create(Long userId, BookingCreateDto booking);
+    BookingFullDto create(Long userId, Long spotId, Long vehicleId, BookingCreateDto booking);
 
     /**
      * Method for money transaction for booking
