@@ -30,9 +30,9 @@ public class UserServiceImpl implements UserService {
     private final PasswordEncoder passwordEncoder;
 
     public UserFullDto update(Long userId, UserUpdateDto user) {
-        User found = userRepository.findById(userId).orElseThrow(() -> new NotFoundException("Пользователь не найден"));
+        User found = getUserByIdFromRepository(userId);
         if (userRepository.existsByPhoneOrEmail(user.getPhone(), user.getEmail())) {
-            throw new AlreadyExistsException("Пользователь с таким телефоном или почтой уже зарегистрирован");
+            throw new AlreadyExistsException("A user with such a phone or email has already been registered");
         }
         found.setName(user.getName() != null ? user.getName() : found.getName());
         found.setSurname(user.getSurname() != null ? user.getSurname() : found.getSurname());
@@ -41,14 +41,18 @@ public class UserServiceImpl implements UserService {
         found.setPhone(user.getPhone() != null ? user.getPhone() : found.getPhone());
         found.setPassword(user.getPassword() != null ? passwordEncoder.encode(user.getPassword()) : found.getPassword());
         User saved = userRepository.save(found);
-        log.info("Пользователь обновил информацию профиля: {}", saved);
+        log.info("The user has updated their profile information: {}", saved);
         return userMapper.toUserFullDto(saved);
     }
 
     public UserFullDto getData(Long userId) {
-        User user = userRepository.findById(userId).orElseThrow(() -> new NotFoundException("Данные о пользователе отсутствуют"));
-        log.info("Пользователь запросил свои данные {}", user);
+        User user = getUserByIdFromRepository(userId);
+        log.info("The user has requested their data: {}", user);
         return userMapper.toUserFullDto(user);
+    }
+
+    private User getUserByIdFromRepository(Long userId) {
+        return userRepository.findById(userId).orElseThrow(() -> new NotFoundException("The user wasn't found"));
     }
 
     @Override
