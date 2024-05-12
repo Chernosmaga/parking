@@ -25,15 +25,22 @@ databaseChangeLog:
                   type: bigint
                   constraints:
                     nullable: false
-#                    foreignKeyName: spot_id
-#                    references: spots (id)
+                    foreignKeyName: spot_id
+                    references: spots (id)
               - column:
-                  name: start
+                  name: vehicle_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: vehicle_id
+                    references: vehicles (id)
+              - column:
+                  name: start_time
                   type: timestamp without time zone
                   constraints:
                     nullable: false
               - column:
-                  name: end
+                  name: end_time
                   type: timestamp without time zone
                   constraints:
                     nullable: false

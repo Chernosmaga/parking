@@ -1,0 +1,29 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Alesya
+      changes:
+        - dropTable:
+            schemaName: public
+            tableName: roles
+            cascadeConstraints: true
+        - dropTable:
+            schemaName: public
+            tableName: users
+            cascadeConstraints: true
+        - dropTable:
+            schemaName: public
+            tableName: spots
+            cascadeConstraints: true
+        - dropTable:
+            schemaName: public
+            tableName: vehicles
+            cascadeConstraints: true
+        - dropTable:
+            schemaName: public
+            tableName: users_vehicles
+            cascadeConstraints: true
+        - dropTable:
+            schemaName: public
+            tableName: bookings
+            cascadeConstraints: true

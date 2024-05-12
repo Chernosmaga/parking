@@ -1,5 +1,6 @@
 package com.example.parking.booking.dto;
 
+import com.example.parking.spot.model.Spot;
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -13,8 +14,6 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 public class BookingCreateDto {
-    @NotBlank
-    private String spot;
     @Future
     @NotBlank
     private LocalDateTime end;

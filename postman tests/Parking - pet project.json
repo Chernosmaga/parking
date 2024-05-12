@@ -1,0 +1,3774 @@
+{
+  "info": {
+    "_postman_id": "571513b5-2aeb-4285-93f5-d8e0127c9f8e",
+    "name": "Parking - pet project",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "18063131",
+    "_collection_link": "https://crimson-star-477479.postman.co/workspace/My-Workspace~f126649b-c38a-4352-8153-d1f9a227c2f4/collection/18063131-571513b5-2aeb-4285-93f5-d8e0127c9f8e?action=share&source=collection_link&creator=18063131"
+  },
+  "item": [
+    {
+      "name": "User 0.1",
+      "item": [
+        {
+          "name": "tests",
+          "item": [
+            {
+              "name": "Should login Admin",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(200);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('accessToken');\r",
+                      "    pm.expect(jsonData).to.have.property('tokenType');\r",
+                      "    pm.globals.set(\"adminToken\", jsonData.accessToken);    \r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"phone\": \"+79999999999\",\r\n    \"password\": \"test1234\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if name is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotBlank.name');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"   \",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if surname is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotBlank.surname');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if birthdate is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.birthdate');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if birthdate is in future",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Past.birthdate');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"2999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if email is not valid",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Email.email');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if phone is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotBlank.phone');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if phone is not valid",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Phone.phone');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+799 93332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if password is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotBlank.password');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when register if password is too short",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Length.password');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;H\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/register",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "register"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when login if phone is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 401 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('error');\r",
+                      "    pm.expect(jsonData.error).to.equal('Unauthorized');\r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"phone\": \" \",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when login if password is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(401);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('error');\r",
+                      "    pm.expect(jsonData.error).to.equal('Unauthorized'); \r",
+                      "});\r",
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"phone\": \"+79993332202\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/auth/login",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "auth",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's id doesn't exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"birthdate\": \"1999-12-12\",\r\n    \"email\": \"griboedov@mail.ru\",\r\n    \"phone\": \"+79993332200\",\r\n    \"password\": \"jhdhg;HK9746\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/0",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "0"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's phone and email exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 409\", function() {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"birthdate\": \"1999-12-12\",\r\n    \"email\": \"griboedov@mail.ru\",\r\n    \"phone\": \"+79993332200\",\r\n    \"password\": \"jhdhg;HK9746\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's email is not valid",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Email.email');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\": \"griboedovmail.ru\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's phone is not valid",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Phone.phone');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"phone\": \"84956789999\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's birthdate in future",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Past.birthdate');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"birthdate\": \"9999-12-12\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's password is too short",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Length.password');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"password\": \"jhdh\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if user's password is too long",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('Length.password');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"password\": \"jhdhgfoe750jhf4HPRL8952kgps20nhrq975;HK9746\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/{{userId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "{{userId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when update if id is not number",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"password\": \"jhdhgfoe750jhf4HPRL8952kgps20nhrq975;HK9746\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/ioijo",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "ioijo"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception if user's id wasn't found",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/0",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "0"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception if user's id is not number",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/users/iui",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "users",
+                    "iui"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Should register user",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('name');\r",
+                  "    pm.expect(jsonData).to.have.property('surname');\r",
+                  "    pm.globals.set(\"userId\", jsonData.id); \r",
+                  "});\r",
+                  "\r",
+                  "\r",
+                  "\r",
+                  "    "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/register",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "register"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should update all user's fields",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "}); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"name\": \"Anatoliy\",\r\n    \"surname\": \"Gribordov\",\r\n    \"birthdate\": \"1999-12-12\",\r\n    \"email\": \"griboedov@mail.ru\",\r\n    \"phone\": \"+79993332200\",\r\n    \"password\": \"jhdhg;HK9746\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/personal/users/{{userId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "users",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('accessToken');\r",
+                  "    pm.expect(jsonData).to.have.property('tokenType');\r",
+                  "    pm.globals.set(\"accessToken\", jsonData.accessToken);    \r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get new token",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('accessToken');\r",
+                  "    pm.expect(jsonData).to.have.property('tokenType');\r",
+                  "    pm.globals.set(\"accessToken\", jsonData.accessToken);    \r",
+                  "});\r",
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"phone\": \"+79993332200\",\r\n    \"password\": \"jhdhg;HK9746\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/auth/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should return user's data by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('name');\r",
+                  "    pm.expect(jsonData).to.have.property('surname');\r",
+                  "}); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/personal/users/{{userId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "users",
+                "{{userId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Vehicle 0.1",
+      "item": [
+        {
+          "name": "tests",
+          "item": [
+            {
+              "name": "Should throw exception when the vehicle is already registered with a different govNum or VINnum",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 409 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(409);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.equals(\"The vehicle with the specified registration number or VIN has already been registered\");",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК98\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle model is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.model');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": null,\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle type is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.type');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle vin is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.vin');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when releaseYear is in the future",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('PastOrPresent.releaseYear');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2045-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle color is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.color');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle engineType is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.engineType');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle govNumber is empty",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(400);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.include('NotBlank.govNumber');",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicle doesn't exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 404 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(404);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.equal(\"The vehicle wasn't found\");",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"govNumber\": \"Х228ХХ148\"\n}\n",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/vehicles/0",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles",
+                    "0"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when the vehicleID doesn't exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;",
+                      "console.log(serverResponse);",
+                      "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+                      "        pm.response.to.have.status(404);",
+                      "        pm.response.to.be.withBody;",
+                      "        pm.response.to.be.json;",
+                      "        var jsonData = pm.response.json();",
+                      "        pm.expect(jsonData).to.have.property('message');",
+                      "        pm.expect(jsonData.message).to.equal(\"The vehicle wasn't found\");",
+                      "    }",
+                      "); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/vehicles/0",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "vehicles",
+                    "0"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Create new vehicle",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {",
+                  "        pm.response.to.have.status(200);",
+                  "        pm.response.to.be.withBody;",
+                  "        pm.response.to.be.json;",
+                  "        var jsonData = pm.response.json();",
+                  "        pm.expect(jsonData).to.have.property('id');",
+                  "        pm.globals.set(\"vehicleId\", jsonData.id);",
+                  "        console.log(jsonData.id);",
+                  "    }",
+                  "); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  ""
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"model\": \"Ford Focus 1\",\n    \"type\": \"CAR\",\n    \"vin\": \"vin1234\",\n    \"releaseYear\": \"2005-01-01\",\n    \"color\": \"Silver\",\n    \"engineType\": \"Бензиновый двигатель\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/vehicles",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "vehicles"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update vehicle (all fields)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {",
+                  "        pm.response.to.have.status(200);",
+                  "        pm.response.to.be.withBody;",
+                  "        pm.response.to.be.json;",
+                  "    }",
+                  "); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"color\": \"Black\",\n    \"govNumber\": \"У166ХК97\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "vehicles",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update vehicle (only color)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;",
+                  "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+                  "        pm.response.to.have.status(201);",
+                  "        pm.response.to.be.withBody;",
+                  "        pm.response.to.be.json;",
+                  "    }",
+                  "); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"color\": \"Red\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "vehicles",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update vehicle (only govNumber)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;",
+                  "pm.test(\"Server response must have status code 201 and JSON format data\", function() {",
+                  "        pm.response.to.have.status(201);",
+                  "        pm.response.to.be.withBody;",
+                  "        pm.response.to.be.json;",
+                  "    }",
+                  "); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"govNumber\": \"Х228ХХ148\"\n}\n",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "vehicles",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get vehicle info",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {",
+                  "        pm.response.to.have.status(200);",
+                  "        pm.response.to.be.withBody;",
+                  "        pm.response.to.be.json;",
+                  "    }",
+                  "); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "vehicles",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Spot 0.1",
+      "item": [
+        {
+          "name": "tests",
+          "item": [
+            {
+              "name": "Should throw exception when created Spot if Role is not Admin",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 403 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(403);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('error');\r",
+                      "    pm.expect(jsonData.error).to.equal('Forbidden');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{userToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 23.253362,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if latitude is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.latitude');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": null,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if latitude is not number",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('JSON parse error');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": \"jsajdsd\", //23.23313,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if longitude is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.longitude');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": null, // -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if isStoreyed is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.isStoreyed');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": null, // true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if floor is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.floor');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": null, //2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if isHandicapped is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('NotNull.isHandicapped');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": null // false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception when created Spot if already exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "console.log(serverResponse);\r",
+                      "pm.test(\"Server response must have status code 409 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).to.include('already exists');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{adminToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{    \r\n    \"latitude\": 25.253362,\r\n    \"longitude\": -137.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/admin/spots",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "admin",
+                    "spots"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception if spot's id wasn't found | for User",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;    \r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).is.not.null;\r",
+                      "    pm.expect(jsonData.message).to.include('Spot with id').to.include('hasn\\'t been found');\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{userToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/spots/0",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "spots",
+                    "0"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Should throw exception if spot's id is not number | for User",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "    var jsonData = pm.response.json();\r",
+                      "    pm.expect(jsonData).to.have.property('message');\r",
+                      "    pm.expect(jsonData.message).is.not.null;\r",
+                      "    pm.expect(jsonData.message).to.include('Failed to convert value of type').to.include('For input string');\r",
+                      "});"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{userToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/spots/fdtfdddrd",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "spots",
+                    "fdtfdddrd"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Should create Spot",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('latitude');\r",
+                  "    pm.expect(jsonData).to.have.property('longitude');\r",
+                  "    pm.expect(jsonData).to.have.property('spotState');\r",
+                  "    pm.expect(jsonData.spotState).to.equal(\"BLOCKED\");\r",
+                  "    pm.expect(jsonData).to.have.property('isStoreyed');\r",
+                  "    pm.expect(jsonData).to.have.property('floor');\r",
+                  "    pm.expect(jsonData).to.have.property('picture');\r",
+                  "    pm.expect(jsonData).to.have.property('isHandicapped');\r",
+                  "    pm.globals.set(\"spotId\", jsonData.id);\r",
+                  "});   "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{    \r\n    \"latitude\": 25.253362,\r\n    \"longitude\": -137.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/spots",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "spots"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should update Spot",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('latitude');\r",
+                  "    pm.expect(jsonData).to.have.property('longitude');\r",
+                  "    pm.expect(jsonData).to.have.property('spotState');\r",
+                  "    pm.expect(jsonData.spotState).to.equal(\"BLOCKED\");\r",
+                  "    pm.expect(jsonData).to.have.property('isStoreyed');\r",
+                  "    pm.expect(jsonData).to.have.property('floor');\r",
+                  "    pm.expect(jsonData).to.have.property('picture');\r",
+                  "    pm.expect(jsonData).to.have.property('isHandicapped');\r",
+                  "    pm.globals.set(\"spotId\", jsonData.id);\r",
+                  "});   "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "PATCH",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"latitude\": 25.2533620,\r\n    \"longitude\": -137.2535210,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/admin/spots/{{spotId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "admin",
+                "spots",
+                "{{spotId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should return spot's data by id | for Admin",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('latitude');\r",
+                  "    pm.expect(jsonData).to.have.property('longitude');\r",
+                  "    pm.expect(jsonData).to.have.property('spotState');\r",
+                  "    pm.expect(jsonData).to.have.property('isStoreyed');\r",
+                  "    pm.expect(jsonData).to.have.property('floor');\r",
+                  "    pm.expect(jsonData).to.have.property('picture');\r",
+                  "    pm.expect(jsonData).to.have.property('isHandicapped');\r",
+                  "});   "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{adminToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/personal/spots/{{spotId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "spots",
+                "{{spotId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Should return spot's data by id | for User",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.expect(jsonData).to.have.property('latitude');\r",
+                  "    pm.expect(jsonData).to.have.property('longitude');\r",
+                  "    pm.expect(jsonData).to.have.property('spotState');\r",
+                  "    pm.expect(jsonData).to.have.property('isStoreyed');\r",
+                  "    pm.expect(jsonData).to.have.property('floor');\r",
+                  "    pm.expect(jsonData).to.have.property('picture');\r",
+                  "    pm.expect(jsonData).to.have.property('isHandicapped');\r",
+                  "});   "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/personal/spots/{{spotId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "spots",
+                "{{spotId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Booking 0.1",
+      "item": [
+        {
+          "name": "tests",
+          "item": [
+            {
+              "name": "Getting exception if booking exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 409 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(409);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"Dummy\",\r\n    \"end\": \"2024-12-12T15:15:15\",\r\n    \"isTradable\": false,\r\n    \"isSubscription\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "{{userId}}",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Getting exception if user doesn't exists",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"Dummy\",\r\n    \"end\": \"2024-12-12T15:15:15\",\r\n    \"isTradable\": false,\r\n    \"isSubscription\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/999/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "999",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Getting exception if Spot is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"\",\r\n    \"end\": \"2024-12-12T15:15:15\",\r\n    \"isTradable\": false,\r\n    \"isSubscription\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/{{userId}}/null/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "{{userId}}",
+                    "null",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Getting exception if end is in past",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"Parking spot\",\r\n    \"end\": \"2000-12-12T15:15:15\",\r\n    \"isTradable\": false,\r\n    \"isSubscription\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "{{userId}}",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Getting exception if isTradable is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"Dummy\",\r\n    \"end\": \"2000-12-12T15:15:15\",\r\n    \"isTradable\": null,\r\n    \"isSubscription\": false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "{{userId}}",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Getting exception if isSubscription is null",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(400);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"spot\": \"Dummy\",\r\n    \"end\": \"2000-12-12T15:15:15\",\r\n    \"isTradable\": true,\r\n    \"isSubscription\": null\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "{{userId}}",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Not found user id",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/0/{{spotId}}/{{vehicleId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "0",
+                    "{{spotId}}",
+                    "{{vehicleId}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Not found booking id",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      "let serverResponse = pm.response;\r",
+                      "pm.test(\"Server response must have status code 404 and JSON format data\", function() {\r",
+                      "    pm.response.to.have.status(404);\r",
+                      "    pm.response.to.be.withBody;\r",
+                      "    pm.response.to.be.json;\r",
+                      "}); "
+                    ],
+                    "type": "text/javascript",
+                    "packages": {}
+                  }
+                }
+              ],
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "{{accessToken}}",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:8080/personal/bookings/0/{{bookingId}}",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "8080",
+                  "path": [
+                    "personal",
+                    "bookings",
+                    "0",
+                    "{{bookingId}}"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Booking entity creation",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+                  "    pm.response.to.have.status(201);\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "    var jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData).to.have.property('id');\r",
+                  "    pm.globals.set(\"bookingId\", jsonData.id);\r",
+                  "}); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"spot\": \"Dummy\",\r\n    \"end\": \"2024-12-12T15:15:15\",\r\n    \"isTradable\": false,\r\n    \"isSubscription\": false\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "bookings",
+                "{{userId}}",
+                "{{spotId}}",
+                "{{vehicleId}}"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Booking cancelling",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "let serverResponse = pm.response;\r",
+                  "pm.test(\"Server response must have status code 204\", function() {\r",
+                  "    pm.response.to.have.status(204);\r",
+                  "}); "
+                ],
+                "type": "text/javascript",
+                "packages": {}
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "{{accessToken}}",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/personal/bookings/{{userId}}/{{bookingId}}",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "personal",
+                "bookings",
+                "{{userId}}",
+                "{{bookingId}}"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

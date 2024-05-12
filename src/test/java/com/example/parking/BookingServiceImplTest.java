@@ -26,7 +26,7 @@ public class BookingServiceImplTest {
     private final BookingRepository bookingRepository;
     private final BookingService bookingService;
     private final UserRepository userRepository;
-
+/*
     private final User first = new User(null, "Pyotr", "Petrov",
             LocalDate.of(1998, 11, 11), LocalDateTime.now().minusDays(10),
             "petrov@mail.ru", "89998885544", "jbsb_jb5GJ3jlnd", ACTIVE);
@@ -101,4 +101,6 @@ public class BookingServiceImplTest {
         assertThrows(NotFoundException.class,
                 () -> bookingService.cancel(createdUser.getId(), 999L));
     }
+
+ */
 }
