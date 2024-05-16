@@ -7,7 +7,6 @@ import com.example.parking.booking.model.Booking;
 import com.example.parking.booking.repository.BookingRepository;
 import com.example.parking.exception.AlreadyExistsException;
 import com.example.parking.exception.NotFoundException;
-import com.example.parking.spot.mapper.SpotMapper;
 import com.example.parking.spot.model.Spot;
 import com.example.parking.spot.repository.SpotRepository;
 import com.example.parking.user.model.User;

@@ -1,24 +1,11 @@
 package com.example.parking;
 
-import com.example.parking.booking.dto.BookingCreateDto;
-import com.example.parking.booking.dto.BookingFullDto;
 import com.example.parking.booking.repository.BookingRepository;
 import com.example.parking.booking.service.BookingService;
-import com.example.parking.exception.AlreadyExistsException;
-import com.example.parking.exception.NotFoundException;
-import com.example.parking.user.model.User;
 import com.example.parking.user.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
-import static com.example.parking.enums.State.ACTIVE;
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @RequiredArgsConstructor(onConstructor_ = @Autowired)

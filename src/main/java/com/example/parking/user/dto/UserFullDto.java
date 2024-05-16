@@ -10,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 
 import java.time.LocalDate;
 import java.util.Set;
