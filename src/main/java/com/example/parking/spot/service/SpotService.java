@@ -5,8 +5,15 @@ import com.example.parking.spot.dto.SpotMainResponseDto;
 import com.example.parking.spot.dto.UpdateSpotRequestDto;
 
 public interface SpotService {
+
     SpotMainResponseDto create(NewSpotRequestDto newSpotRequestDto);
 
+    /**
+     *
+     * @param spotId
+     * @param updateSpotRequestDto
+     * @return
+     */
     SpotMainResponseDto update(Long spotId, UpdateSpotRequestDto updateSpotRequestDto);
 
     SpotMainResponseDto getData(Long spotId);

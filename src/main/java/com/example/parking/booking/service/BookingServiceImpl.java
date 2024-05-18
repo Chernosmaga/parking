@@ -9,6 +9,7 @@ import com.example.parking.exception.AlreadyExistsException;
 import com.example.parking.exception.NotFoundException;
 import com.example.parking.spot.mapper.SpotMapper;
 import com.example.parking.spot.model.Spot;
+import com.example.parking.spot.model.SpotState;
 import com.example.parking.spot.repository.SpotRepository;
 import com.example.parking.user.model.User;
 import com.example.parking.user.repository.UserRepository;
@@ -38,10 +39,12 @@ public class BookingServiceImpl implements BookingService {
     public BookingFullDto create(Long userId, Long spotId, Long vehicleId ,BookingCreateDto booking) {
         User user = findUser(userId);
         Spot spot = spotRepository.findById(spotId).orElseThrow( () -> new NotFoundException("Spot's data wasn't found"));
-        Vehicle vehicle = vehicleRepository.findById(vehicleId).orElseThrow(() -> new NotFoundException("The vehicle wasn't found"));
-        if (bookingRepository.existsBySpot(spot)) {
+        if (SpotState.FREE != spot.getSpotState()) {
+            throw new AlreadyExistsException("The spot isn't FREE");
+        } else if (bookingRepository.existsBySpot(spot)) {
             throw new AlreadyExistsException("The spot is already taken");
         }
+        Vehicle vehicle = vehicleRepository.findById(vehicleId).orElseThrow(() -> new NotFoundException("The vehicle wasn't found"));
         Booking thisBooking = bookingMapper.toBooking(booking);
         thisBooking.setBooker(user);
         thisBooking.setSpot(spot);

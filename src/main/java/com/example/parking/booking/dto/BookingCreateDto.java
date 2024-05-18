@@ -2,6 +2,7 @@ package com.example.parking.booking.dto;
 
 import com.example.parking.spot.model.Spot;
 import jakarta.validation.constraints.Future;
+import jakarta.validation.constraints.FutureOrPresent;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;

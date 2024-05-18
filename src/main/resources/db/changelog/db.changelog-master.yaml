@@ -13,3 +13,5 @@ databaseChangeLog:
       file: db/changelog/changeset/create-spots-table.yaml
   - include:
       file: db/changelog/changeset/create-booking-table.yaml
+  - include:
+      file: db/changelog/changeset/create-spots-rating-table.yaml
