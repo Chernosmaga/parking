@@ -22,6 +22,8 @@ public class SpotRating {
     private Long spotId;
     @Column(name="user_id", nullable = false)
     private Long userId;
+    @Column(name="user_name", nullable = false)
+    private String userName;
     private Integer rating;
     private String comment;
     private LocalDateTime dateTime;

@@ -1,5 +1,6 @@
 package com.example.parking.spot.controller;
 
+import com.example.parking.spot.dto.SpotWithRatingResponseDto;
 import com.example.parking.spot.service.SpotRatingService;
 import org.springframework.security.core.Authentication;
 import com.example.parking.spot.dto.SpotMainResponseDto;
@@ -17,7 +18,7 @@ public class PersonalSpotController {
     private final SpotRatingService spotRatingService;
 
     @GetMapping(path =  "/{spotId}")
-    public SpotMainResponseDto getData(@PathVariable Long spotId) {
+    public SpotWithRatingResponseDto getData(@PathVariable Long spotId) {
         return spotService.getData(spotId);
     }
 

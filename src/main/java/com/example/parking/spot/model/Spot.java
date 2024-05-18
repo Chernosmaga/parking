@@ -30,6 +30,8 @@ public class Spot {
     private String picture;
     @Column(name = "is_handicapped", nullable = false)
     private Boolean isHandicapped;
+    @Column(name = "average_rating")
+    private Double averageRating;
 //    private BigDecimal price;
 //    private String currency;
 //    @Column(name = "occupied_from")

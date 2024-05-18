@@ -48,6 +48,11 @@ databaseChangeLog:
                   type: boolean
                   constraints:
                     nullable: false
+              - column:
+                  name: average_rating
+                  type: numeric(5,1)
+                  constraints:
+                    nullable: false
 #              - column:
 #                  name: price
 #                  type: bigdecimal
