@@ -55,10 +55,6 @@ public class SpotServiceImpl implements SpotService {
             spotOriginal.setLongitude(longitude);
         }
 
-        if (updateSpotRequestDto.getIsStoreyed() != null) {
-            spotOriginal.setIsStoreyed(updateSpotRequestDto.getIsStoreyed());
-        }
-
         if (isFloorInDto) {
             spotOriginal.setFloor(floor);
         }
