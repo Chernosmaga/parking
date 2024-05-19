@@ -22,3 +22,11 @@ databaseChangeLog:
                     foreignKeyName: vehicle_id
                     references: vehicles (id)
                     nullable: false
+        - sql:
+            sql: |
+              INSERT INTO users_vehicles (user_id, vehicle_id)
+              VALUES (1, 1);
+              INSERT INTO users_vehicles (user_id, vehicle_id)
+              VALUES (2, 2);
+              INSERT INTO users_vehicles (user_id, vehicle_id)
+              VALUES (3, 3);

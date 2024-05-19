@@ -29,8 +29,8 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final PasswordEncoder passwordEncoder;
 
-    public UserFullDto update(Long userId, UserUpdateDto user) {
-        User found = getUserByIdFromRepository(userId);
+    public UserFullDto update(Long userId, UserUpdateDto user, String userPhone) {
+        User found = userRepository.findByPhone(userPhone).orElseThrow(() -> new NotFoundException("User not found"));
         if (userRepository.existsByPhoneOrEmail(user.getPhone(), user.getEmail())) {
             throw new AlreadyExistsException("A user with such a phone or email has already been registered");
         }

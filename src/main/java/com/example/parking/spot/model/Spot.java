@@ -24,8 +24,6 @@ public class Spot {
     @Column(name = "spot_state", nullable = false)
     @Enumerated(STRING)
     private SpotState spotState;
-    @Column(name = "is_storeyed", nullable = false)
-    private Boolean isStoreyed;
     private Short floor;
     private String picture;
     @Column(name = "is_handicapped", nullable = false)

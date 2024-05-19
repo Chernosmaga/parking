@@ -50,3 +50,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
                     unique: true
+        - sql:
+            sql: |
+              INSERT INTO vehicles (model, type, vin, release_year, color, engine_type, gov_number)
+              VALUES ('Ford Focus', 'CAR', 'VF3LBS6C100000000', '1990-01-01', 'white', 'Бензиновый двигатель', 'У166ХК97');
+              INSERT INTO vehicles (model, type, vin, release_year, color, engine_type, gov_number)
+              VALUES ('BMW', 'CAR', 'JF8LBS6C10000000', '1890-01-01', 'black', 'Бензиновый двигатель', 'P222ХM01');
+              INSERT INTO vehicles (model, type, vin, release_year, color, engine_type, gov_number)
+              VALUES ('Lada', 'CAR', 'VF3LBS6C10000001', '1999-06-06', 'purple', 'Бензиновый двигатель', 'У167ХC29');

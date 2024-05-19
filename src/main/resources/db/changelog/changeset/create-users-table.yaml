@@ -65,5 +65,9 @@ databaseChangeLog:
                     references: roles (id)
         - sql:
             sql: |
-              INSERT INTO users ("name", surname, birthdate, registration_date, email, phone, "password", state, role_id) 
-              VALUES ('Admin', 'Test', '1999-01-01', '2024-01-01', 'admin@parking.com', '+79999999999', '$2a$10$106sKoukPBLCGkWYgcqPve6k2a6Z9U4dKSjKDc6ZNWwVWvLs6IsRK', 'ACTIVE', 1);
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Andrew', 'Shatalov', '1998-02-07', '2024-01-01', 'shatalov@mail.com', '+79996603322', '$2a$10$w6DMV1JiN1pVqXbYZJkhqOWLiHiivLojMezZPcJk0BgoBoUNcA4yi', 'ACTIVE', 1);
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Alina', 'Kovrova', '1996-01-12', '2024-01-01', 'kovrova@mail.ru', '+79883332202', '$2a$10$zHgB.js1rBFJAsH17k8JBeOou.lmrLWyvhMmoFx0lXB.Igcvf1S0G', 'ACTIVE', 2);
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Elizaveta', 'Molohova', '1997-12-12', '2024-01-01', 'molohova@mail.ru', '+79883331090', '$2a$10$7a9SjHEah3/9sHYTB19uAeL25KXhTw1hTnup237OEz2NOeo6DVRkK', 'ACTIVE', 2);
