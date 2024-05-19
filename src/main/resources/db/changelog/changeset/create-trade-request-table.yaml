@@ -1,0 +1,66 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-trade-request
+      author: Sergey
+      changes:
+        - createTable:
+            tableName: trade_requests
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: requester_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: owner_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: price
+                  type: decimal
+                  constraints:
+                    nullable: false
+              - column:
+                  name: spot_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: request_date
+                  type: timestamp without time zone
+                  constraints:
+                    nullable: false
+              - column:
+                  name: request_state
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: comment
+                  type: varchar
+        - addForeignKeyConstraint:
+            baseTableName: trade_requests
+            baseColumnNames: requester_id
+            constraintName: fk_trade_request_requester
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: trade_requests
+            baseColumnNames: owner_id
+            constraintName: fk_trade_request_owner
+            referencedTableName: users
+            referencedColumnNames: id
+        - addForeignKeyConstraint:
+            baseTableName: trade_requests
+            baseColumnNames: spot_id
+            constraintName: fk_trade_request_spot
+            referencedTableName: spots
+            referencedColumnNames: id

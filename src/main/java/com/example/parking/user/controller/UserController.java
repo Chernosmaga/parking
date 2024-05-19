@@ -4,7 +4,6 @@ import com.example.parking.user.dto.UserFullDto;
 import com.example.parking.user.dto.UserUpdateDto;
 import com.example.parking.user.service.UserService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.validation.annotation.Validated;
