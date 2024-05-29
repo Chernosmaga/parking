@@ -29,8 +29,13 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: is_storeyed
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
                   name: floor
-                  type: smallint
+                  type: integer
                   constraints:
                     nullable: false
               - column:
@@ -43,27 +48,12 @@ databaseChangeLog:
                   type: boolean
                   constraints:
                     nullable: false
-#              - column:
-#                  name: price
-#                  type: bigdecimal
-#              - column:
-#                  name: currency
-#                  type: varchar
-#              - column:
-#                  name: occupied_from
-#                  type: datetime
-#              - column:
-#                  name: occupied_to
-#                  type: datetime
-#              - column:
-#                  name: subscriber
-#                  type: bigint
         - sql:
             sql: |
-              INSERT INTO spots (latitude, longitude, spot_state, floor, picture, is_handicapped)
-              VALUES (25.253362, -137.253521, 'FREE', 1, 'https://fikiwiki.com/uploads/posts/2022-02/1644870756_43-fikiwiki-com-p-prikolnie-kartinki-ozhidanie-i-realnost-45.jpg', false);
-              INSERT INTO spots (latitude, longitude, spot_state, floor, picture, is_handicapped)
-              VALUES (65.253532, 56.253411, 'FREE', 1, 'https://sun9-15.userapi.com/impg/bIDrOlZbtmyuv8ZBVtV-k5S8yM6xcESkcfjhQA/a-wrByoPuQ8.jpg?size=1078x1075&quality=95&sign=c5fd1fdac231b6237243c8c04da0b4a4&c_uniq_tag=A9KiYSSKL7D1AlyXk-3GJ7VSlpYIWBuSYKW_9aik4rY&type=album', false);
-              INSERT INTO spots (latitude, longitude, spot_state, floor, picture, is_handicapped)
-              VALUES (48.223362, -157.237821, 'FREE', 1, 'https://true-game.ru/wp-content/uploads/78d281e460f4bf294d8302321b19c1e5.webp', true);
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (25.253362, -137.253521, 'FREE', false, 1, 'https://fikiwiki.com/uploads/posts/2022-02/1644870756_43-fikiwiki-com-p-prikolnie-kartinki-ozhidanie-i-realnost-45.jpg', false);
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (65.253532, 56.253411, 'FREE', false, 1, 'https://sun9-15.userapi.com/impg/bIDrOlZbtmyuv8ZBVtV-k5S8yM6xcESkcfjhQA/a-wrByoPuQ8.jpg?size=1078x1075&quality=95&sign=c5fd1fdac231b6237243c8c04da0b4a4&c_uniq_tag=A9KiYSSKL7D1AlyXk-3GJ7VSlpYIWBuSYKW_9aik4rY&type=album', false);
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (48.223362, -157.237821, 'FREE', false, 1, 'https://true-game.ru/wp-content/uploads/78d281e460f4bf294d8302321b19c1e5.webp', true);
               
