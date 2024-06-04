@@ -2,6 +2,7 @@ package com.example.parking.exception.controller;
 
 import com.example.parking.exception.AlreadyExistsException;
 import com.example.parking.exception.DataAccessException;
+import com.example.parking.exception.DataViolationException;
 import com.example.parking.exception.NotFoundException;
 import com.example.parking.exception.model.ErrorResponse;
 import jakarta.validation.UnexpectedTypeException;
@@ -38,7 +39,7 @@ public class ErrorController {
      * @param exception receives already exist exception
      * @return custom entity for exception with helpful information about error
      */
-    @ExceptionHandler
+    @ExceptionHandler({DataViolationException.class})
     @ResponseStatus(CONFLICT)
     public ErrorResponse handleAlreadyExistsException(final AlreadyExistsException exception) {
         return new ErrorResponse(exception.getMessage(), LocalDateTime.now(), "Data conflict");

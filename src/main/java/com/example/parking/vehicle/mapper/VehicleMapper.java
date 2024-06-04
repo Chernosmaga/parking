@@ -9,5 +9,4 @@ public interface VehicleMapper {
     Vehicle toVehicle(VehicleFullDto vehicle);
 
     VehicleFullDto toVehicleFullDto (Vehicle vehicle);
-
 }

@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "038f016b-8a24-4407-a95a-86f313ae8294",
-		"name": "Parking 0.3",
+		"name": "Parking 0.4",
 		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "28184234"
 	},
@@ -937,6 +937,50 @@
 					"response": []
 				},
 				{
+					"name": "Should register user Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+									"    pm.response.to.have.status(201);\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.expect(jsonData).to.have.property('name');\r",
+									"    pm.expect(jsonData).to.have.property('surname');\r",
+									"    pm.globals.set(\"userId\", jsonData.id); \r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"    "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Igor\",\r\n    \"surname\": \"Popov\",\r\n    \"birthdate\": \"1999-12-13\",\r\n    \"email\": \"griboedov2@mail.ru\",\r\n    \"phone\": \"+79993332202\",\r\n    \"password\": \"jhdhg;HK97462\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/auth/register"
+					},
+					"response": []
+				},
+				{
 					"name": "Should update all user's fields",
 					"event": [
 						{
@@ -1006,7 +1050,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"phone\": \"+79999999999\",\r\n    \"password\": \"test1234\"\r\n}",
+							"raw": "{\r\n    \"phone\": \"+79883331090\",\r\n    \"password\": \"456bmnGJB_oj43\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1096,7 +1140,7 @@
 			]
 		},
 		{
-			"name": "Vehicle 0.1",
+			"name": "Vehicle 0.2",
 			"item": [
 				{
 					"name": "tests",
@@ -1778,6 +1822,987 @@
 						"url": "http://localhost:8080/vehicles/{{vehicleId}}"
 					},
 					"response": []
+				},
+				{
+					"name": "Creation of transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(201);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData).to.have.property('id');\r",
+									"        pm.globals.set(\"transferRequestId\", jsonData.id);\r",
+									"        console.log(jsonData.id);\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Alina\",\r\n    \"surname\": \"Kovrova\",\r\n    \"phoneNumber\": \"+79883332202\",\r\n    \"govNumber\": \"P222ХM01\",\r\n    \"vin\": \"JF8LBS6C10000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Creation of the first transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(201);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData).to.have.property('id');\r",
+									"        pm.globals.set(\"firstTransferRequestId\", jsonData.id);\r",
+									"        console.log(jsonData.id);\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Creation of the second transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 201 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(201);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"        var jsonData = pm.response.json();\r",
+									"        pm.expect(jsonData).to.have.property('id');\r",
+									"        pm.globals.set(\"secondTransferRequestId\", jsonData.id);\r",
+									"        console.log(jsonData.id);\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Elizaveta\",\r\n    \"surname\": \"Molohova\",\r\n    \"phoneNumber\": \"+79883331090\",\r\n    \"govNumber\": \"У167ХC29\",\r\n    \"vin\": \"VF3LBS6C10000001\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if vehicle wasn't found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 404 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(404);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"govNumber\": \"У166ХК99\",\r\n    \"vin\": \"VF3LBS6C100000022\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if govNumber is null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if vin is null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"govNumber\": \"У166ХК97\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmation of transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer/{{transferRequestId}}?state=ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer",
+								"{{transferRequestId}}"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACCEPTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if user has no rights for operation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 403 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(403);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer/{{transferRequestId}}?state=ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer",
+								"{{transferRequestId}}"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACCEPTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if request wasn't found",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 404 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(404);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer/999?state=ACCEPTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer",
+								"999"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACCEPTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rejection of the first transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer/{{firstTransferRequestId}}?state=REJECTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer",
+								"{{firstTransferRequestId}}"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "REJECTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Rejection of the second transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer/{{secondTransferRequestId}}?state=REJECTED",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer",
+								"{{secondTransferRequestId}}"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "REJECTED"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Throw exception if phone doesn't belong to user",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 409 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(409);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79883331090\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if phone number doesn't match pattern",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+7999999\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if phone number is null",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"surname\": \"Shatalov\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if name is null for transfer request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"surname\": \"Shatalov\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Throws exception if surname is null for trade request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(400);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									"); "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andrew\",\r\n    \"phoneNumber\": \"+79996603322\",\r\n    \"govNumber\": \"У166ХК97\",\r\n    \"vin\": \"VF3LBS6C100000000\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:8080/vehicles/transfer"
+					},
+					"response": []
+				},
+				{
+					"name": "Returns list of requests for owner with length 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/owner/transfer?state=REJECTED&from=0&size=5&sort=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"owner",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "REJECTED"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Returns list of requests for requester with length 2",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/requester/transfer?state=REJECTED&from=0&size=5&sort=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"requester",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "REJECTED"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Returns list of requests for owner with length 0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/owner/transfer?state=ACCEPTED&from=0&size=5&sort=ASC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"owner",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACCEPTED"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "ASC"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Returns list of requests for requester with length 0",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"        pm.response.to.have.status(200);\r",
+									"        pm.response.to.be.withBody;\r",
+									"        pm.response.to.be.json;\r",
+									"    }\r",
+									");"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{accessToken}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/vehicles/requester/transfer?state=ACCEPTED&from=0&size=5&sort=DESC",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"requester",
+								"transfer"
+							],
+							"query": [
+								{
+									"key": "state",
+									"value": "ACCEPTED"
+								},
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "5"
+								},
+								{
+									"key": "sort",
+									"value": "DESC"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -1957,51 +2982,6 @@
 								"body": {
 									"mode": "raw",
 									"raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": null, // -136.253521,\r\n    \"isStoreyed\": true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": "http://localhost:8080/admin/spots"
-							},
-							"response": []
-						},
-						{
-							"name": "Should throw exception when created Spot if isStoreyed is null",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"let serverResponse = pm.response;\r",
-											"console.log(serverResponse);\r",
-											"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
-											"    pm.response.to.have.status(400);\r",
-											"    pm.response.to.be.withBody;\r",
-											"    pm.response.to.be.json;\r",
-											"    var jsonData = pm.response.json();\r",
-											"    pm.expect(jsonData).to.have.property('message');\r",
-											"    pm.expect(jsonData.message).to.include('NotNull.isStoreyed');\r",
-											"});"
-										],
-										"type": "text/javascript",
-										"packages": {}
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": null, // true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
