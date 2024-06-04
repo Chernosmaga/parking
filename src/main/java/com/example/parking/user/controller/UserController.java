@@ -4,9 +4,9 @@ import com.example.parking.user.dto.UserFullDto;
 import com.example.parking.user.dto.UserUpdateDto;
 import com.example.parking.user.service.UserService;
 import jakarta.validation.Valid;
-import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.core.Authentication;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
@@ -17,8 +17,10 @@ public class UserController {
     private final UserService userService;
 
     @PatchMapping("/personal/users/{userId}")
-    public UserFullDto update(@PathVariable @NotNull Long userId, @RequestBody @Valid UserUpdateDto user) {
-        return userService.update(userId, user);
+    public UserFullDto update(@PathVariable @NotNull Long userId,
+                              @RequestBody @Valid UserUpdateDto user,
+                              Authentication authentication) {
+        return userService.update(userId, user, authentication.getName());
     }
 
     @GetMapping("/personal/users/{userId}")

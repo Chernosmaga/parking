@@ -1,4 +1,4 @@
-databaseChangeLog:
+ databaseChangeLog:
   - changeSet:
       id: create-roles
       author: Alesya

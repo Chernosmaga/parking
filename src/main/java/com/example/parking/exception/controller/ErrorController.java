@@ -1,6 +1,8 @@
 package com.example.parking.exception.controller;
 
 import com.example.parking.exception.AlreadyExistsException;
+import com.example.parking.exception.DataAccessException;
+import com.example.parking.exception.DataViolationException;
 import com.example.parking.exception.NotFoundException;
 import com.example.parking.exception.model.ErrorResponse;
 import jakarta.validation.UnexpectedTypeException;
@@ -37,7 +39,7 @@ public class ErrorController {
      * @param exception receives already exist exception
      * @return custom entity for exception with helpful information about error
      */
-    @ExceptionHandler
+    @ExceptionHandler({DataViolationException.class})
     @ResponseStatus(CONFLICT)
     public ErrorResponse handleAlreadyExistsException(final AlreadyExistsException exception) {
         return new ErrorResponse(exception.getMessage(), LocalDateTime.now(), "Data conflict");
@@ -53,5 +55,16 @@ public class ErrorController {
     @ResponseStatus(BAD_REQUEST)
     public ErrorResponse handleBadRequestExceptions(final Exception exception) {
         return new ErrorResponse(exception.getMessage(), LocalDateTime.now(), "Data is invalid");
+    }
+
+    /**
+     * Handles exception if user has no access to data
+     * @param exception receives custom exception class DataAccessException
+     * @return custom entity for response
+     */
+    @ExceptionHandler
+    @ResponseStatus(FORBIDDEN)
+    public ErrorResponse handleDataAccessException(final DataAccessException exception) {
+        return new ErrorResponse(exception.getMessage(), LocalDateTime.now(), "Access denied");
     }
 }
