@@ -18,16 +18,16 @@ import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @RequiredArgsConstructor(onConstructor_ = @Autowired)
-public class UserServiceImplTest {
+public class SpotServiceImplTest {
     private final UserRepository userRepository;
     private final UserService userService;
-    private final UserFullDto ivanov = new UserFullDto(null, "Иван", "Иванов",
+    private final UserFullDto ivanov = new UserFullDto(null, "Ivan", "Ivanov",
             LocalDate.of(1997, 10, 10), "ivanov@mail.ru", "89994443322",
             "jsbgb_hk3h4nkngAG");
-    private final UserUpdateDto ivanovUpdate = new UserUpdateDto(null, "Артём", "Сидоров",
+    private final UserUpdateDto ivanovUpdate = new UserUpdateDto(null, "Artyom", "Sidorov",
             LocalDate.of(1997, 1, 1), "sidorov@mail.ru", "89999991100",
             "sbjkbgj24tbjbkJDJKF");
-    private final UserFullDto petrov = new UserFullDto(null, "Пётр", "Петров",
+    private final UserFullDto petrov = new UserFullDto(null, "Pyotr", "Petrov",
             LocalDate.of(1998, 11, 11), "petrov@mail.ru", "89998885544",
             "jbsb_jb5GJ3jlnd");
 
@@ -78,7 +78,7 @@ public class UserServiceImplTest {
     @Test
     void update_shouldThrowExceptionIfPhoneExists() {
         UserFullDto created = userService.create(ivanov);
-        UserUpdateDto dataToUpdate = new UserUpdateDto(null, "Пётр", "Петров",
+        UserUpdateDto dataToUpdate = new UserUpdateDto(null, "Pyotr", "Petrov",
                 LocalDate.of(1998, 11, 11), "petrov@mail.ru", created.getPhone(),
                 "jbsb_jb5GJ3jlnd");
 
@@ -89,7 +89,7 @@ public class UserServiceImplTest {
     @Test
     void update_shouldThrowExceptionIfEmailExists() {
         UserFullDto created = userService.create(ivanov);
-        UserUpdateDto dataToUpdate = new UserUpdateDto(null, "Пётр", "Петров",
+        UserUpdateDto dataToUpdate = new UserUpdateDto(null, "Pyotr", "Petrov",
                 LocalDate.of(1998, 11, 11), created.getEmail(), "89994445577",
                 "jbsb_jb5GJ3jlnd");
 

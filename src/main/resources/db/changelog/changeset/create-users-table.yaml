@@ -1,0 +1,73 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users
+      author: Sergey
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: surname
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: birthdate
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: registration_date
+                  type: timestamp
+                  constraints:
+                    nullable: false
+              - column:
+                  name: email
+                  type: varchar
+                  constraints:
+                    nullable: true
+                    unique: true
+              - column:
+                  name: phone
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: password
+                  type: varchar
+                  constraints:
+                    nullable: false
+                    unique: true
+              - column:
+                  name: state
+                  type: varchar
+                  constraints:
+                    nullable: false
+              - column:
+                  name: role_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+                    foreignKeyName: role_id
+                    references: roles (id)
+        - sql:
+            sql: |
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Andrew', 'Shatalov', '1998-02-07', '2024-01-01', 'shatalov@mail.com', '+79996603322', '$2a$10$w6DMV1JiN1pVqXbYZJkhqOWLiHiivLojMezZPcJk0BgoBoUNcA4yi', 'ACTIVE', 1);
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Alina', 'Kovrova', '1996-01-12', '2024-01-01', 'kovrova@mail.ru', '+79883332202', '$2a$10$zHgB.js1rBFJAsH17k8JBeOou.lmrLWyvhMmoFx0lXB.Igcvf1S0G', 'ACTIVE', 2);
+              INSERT INTO users (name, surname, birthdate, registration_date, email, phone, password, state, role_id)
+              VALUES ('Elizaveta', 'Molohova', '1997-12-12', '2024-01-01', 'molohova@mail.ru', '+79883331090', '$2a$10$7a9SjHEah3/9sHYTB19uAeL25KXhTw1hTnup237OEz2NOeo6DVRkK', 'ACTIVE', 2);

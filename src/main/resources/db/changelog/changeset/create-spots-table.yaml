@@ -1,0 +1,59 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-spots
+      author: Igor
+      changes:
+        - createTable:
+            tableName: spots
+            columns:
+              - column:
+                  name: id
+                  type: bigint
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: latitude
+                  type: numeric(9,7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: longitude
+                  type: numeric(10,7)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: spot_state
+                  type: varchar(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: is_storeyed
+                  type: boolean
+                  constraints:
+                    nullable: false
+              - column:
+                  name: floor
+                  type: integer
+                  constraints:
+                    nullable: false
+              - column:
+                  name: picture
+                  type: varchar
+                  constraints:
+                    nullable: true
+              - column:
+                  name: is_handicapped
+                  type: boolean
+                  constraints:
+                    nullable: false
+        - sql:
+            sql: |
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (25.253362, -137.253521, 'FREE', false, 1, 'https://fikiwiki.com/uploads/posts/2022-02/1644870756_43-fikiwiki-com-p-prikolnie-kartinki-ozhidanie-i-realnost-45.jpg', false);
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (65.253532, 56.253411, 'FREE', false, 1, 'https://sun9-15.userapi.com/impg/bIDrOlZbtmyuv8ZBVtV-k5S8yM6xcESkcfjhQA/a-wrByoPuQ8.jpg?size=1078x1075&quality=95&sign=c5fd1fdac231b6237243c8c04da0b4a4&c_uniq_tag=A9KiYSSKL7D1AlyXk-3GJ7VSlpYIWBuSYKW_9aik4rY&type=album', false);
+              INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped)
+              VALUES (48.223362, -157.237821, 'FREE', false, 1, 'https://true-game.ru/wp-content/uploads/78d281e460f4bf294d8302321b19c1e5.webp', true);
+              

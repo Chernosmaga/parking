@@ -1,8 +1,10 @@
 package com.example.parking.user.dto;
 
 import com.example.parking.annotation.Phone;
+import com.example.parking.vehicle.dto.VehicleFullDto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.validator.constraints.Length;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -21,10 +24,9 @@ public class UserFullDto {
     @NotBlank
     private String surname;
     @Past
-    @NotBlank
+    @NotNull
     private LocalDate birthdate;
     @Email
-    @NotBlank
     private String email;
     @Phone
     @NotBlank
@@ -32,4 +34,5 @@ public class UserFullDto {
     @NotBlank
     @Length(min = 8, max = 32)
     private String password;
+    private Set<VehicleFullDto> vehicles;
 }
