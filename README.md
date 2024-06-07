@@ -28,6 +28,7 @@ Java 17, Spring, Spring Security, Lombok, Hibernate, PostgreSQl, JUnit, Postman 
 
 ## База данных проекта
 
+![](https://github.com/Chernosmaga/parking/blob/master/src/main/resources/parking.png)
 
 ## План разработки
 
