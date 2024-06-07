@@ -1,5 +1,6 @@
 package com.example.parking.spot.model;
 
+import com.example.parking.user.model.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,19 +12,18 @@ import static jakarta.persistence.GenerationType.IDENTITY;
 
 @Data
 @Entity
-@Table(name = "spots_rating")
+@Table(name = "spots_reviews")
 @AllArgsConstructor
 @NoArgsConstructor
-public class SpotRating {
+public class SpotReviews {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
     @Column(name="spot_id", nullable = false)
     private Long spotId;
-    @Column(name="user_id", nullable = false)
-    private Long userId;
-    @Column(name="user_name", nullable = false)
-    private String userName;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User user;
     private Integer rating;
     private String comment;
     private LocalDateTime dateTime;

@@ -53,6 +53,10 @@ databaseChangeLog:
                   type: numeric(5,1)
                   constraints:
                     nullable: false
+        - sql:
+            sql: |
+              INSERT INTO spots (latitude, longitude, "spot_state", is_storeyed, floor, "picture", "is_handicapped", average_rating)
+              VALUES (25.2533620, -137.2535210, 'FREE', true, 2, 'https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg', false, 0);
 #              - column:
 #                  name: price
 #                  type: bigdecimal

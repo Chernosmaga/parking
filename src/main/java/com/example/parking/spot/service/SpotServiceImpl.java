@@ -8,9 +8,9 @@ import com.example.parking.spot.dto.SpotWithRatingResponseDto;
 import com.example.parking.spot.dto.UpdateSpotRequestDto;
 import com.example.parking.spot.mapper.SpotMapper;
 import com.example.parking.spot.model.Spot;
-import com.example.parking.spot.model.SpotRating;
+import com.example.parking.spot.model.SpotReviews;
 import com.example.parking.spot.model.SpotState;
-import com.example.parking.spot.repository.SpotRatingRepository;
+import com.example.parking.spot.repository.SpotReviewsRepository;
 import com.example.parking.spot.repository.SpotRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ import java.util.List;
 public class SpotServiceImpl implements SpotService {
     private final SpotRepository spotRepository;
     private final SpotMapper spotMapper;
-    private final SpotRatingRepository spotRatingRepository;
+    private final SpotReviewsRepository spotReviewsRepository;
 
     public SpotMainResponseDto create(NewSpotRequestDto newSpotRequestDto) {
         throwExceptionIfSpotExist(newSpotRequestDto.getLatitude(), newSpotRequestDto.getLongitude(), newSpotRequestDto.getFloor());
@@ -84,10 +84,11 @@ public class SpotServiceImpl implements SpotService {
 
     @Override
     public SpotWithRatingResponseDto getData(Long spotId) {
+        // Нужно вынести отзывы в отдельный метод
         Spot foundSpot = findSpotOrThrowException(spotId);
-        List<SpotRating> ratings = spotRatingRepository.findBySpotId(spotId);
+        List<SpotReviews> ratings = spotReviewsRepository.findBySpotId(spotId);
         Double averageRating = ratings.stream()
-                .mapToInt(SpotRating::getRating)
+                .mapToInt(SpotReviews::getRating)
                 .average()
                 .orElse(0.0);
         foundSpot.setAverageRating(averageRating);
