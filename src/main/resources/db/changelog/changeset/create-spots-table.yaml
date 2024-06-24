@@ -35,12 +35,12 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: floor
-                  type: smallint
+                  type: integer
                   constraints:
                     nullable: false
               - column:
                   name: picture
-                  type: varchar(1000)
+                  type: varchar
                   constraints:
                     nullable: true
               - column:

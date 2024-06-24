@@ -19,8 +19,9 @@ public class SpotReviews {
     @Id
     @GeneratedValue(strategy = IDENTITY)
     private Long id;
-    @Column(name="spot_id", nullable = false)
-    private Long spotId;
+    @ManyToOne
+    @JoinColumn(name="spot_id")
+    private Spot spot;
     @ManyToOne
     @JoinColumn(name = "user_id")
     private User user;

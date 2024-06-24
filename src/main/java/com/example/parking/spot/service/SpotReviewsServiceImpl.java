@@ -6,6 +6,7 @@ import com.example.parking.spot.dto.SpotReviewsGetSpotDto;
 import com.example.parking.spot.dto.SpotReviewsGetUserDto;
 import com.example.parking.spot.dto.UserReviewDto;
 import com.example.parking.spot.mapper.SpotReviewsMapper;
+import com.example.parking.spot.model.Spot;
 import com.example.parking.spot.model.SpotReviews;
 import com.example.parking.spot.repository.SpotReviewsRepository;
 import com.example.parking.spot.repository.SpotRepository;
@@ -38,6 +39,7 @@ public class SpotReviewsServiceImpl implements SpotReviewsService {
     public SpotReviewsFullDto createReview(SpotReviewsFullDto spotRating, String userPhone, Long spotId) {
 
         User user = userRepository.findByPhone(userPhone).orElseThrow(() -> new NotFoundException("The user wasn't found"));
+        Spot spot = spotRepository.findById(spotId).orElseThrow(() -> new NotFoundException("The spot wasn't found"));
         spotRepository.findById(spotId).orElseThrow(() -> new NotFoundException("Spot with id " + spotId + " wasn't found"));
 
         Optional<SpotReviews> existingSpotRating = spotReviewsRepository.findByUserIdAndSpotId(user.getId(), spotId);
@@ -46,7 +48,7 @@ public class SpotReviewsServiceImpl implements SpotReviewsService {
             log.info("The old review looked like this : {}", oldSpotReviews);
             SpotReviews newSpotReviews = spotReviewsMapper.toSpotReviews(spotRating);
             newSpotReviews.setId(oldSpotReviews.getId());
-            newSpotReviews.setSpotId(spotId);
+            newSpotReviews.setSpot(spot);
             newSpotReviews.setUser(user);
             newSpotReviews.setComment(spotRating.getComment() != null ? spotRating.getComment() : "");
             newSpotReviews.setDateTime(LocalDateTime.now());
@@ -59,7 +61,7 @@ public class SpotReviewsServiceImpl implements SpotReviewsService {
         }
 
         SpotReviews newSpotReviews = spotReviewsMapper.toSpotReviews(spotRating);
-        newSpotReviews.setSpotId(spotId);
+        newSpotReviews.setSpot(spot);
         newSpotReviews.setUser(user);
         newSpotReviews.setComment(spotRating.getComment() != null ? spotRating.getComment() : "");
         newSpotReviews.setDateTime(LocalDateTime.now());
