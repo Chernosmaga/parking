@@ -1,9 +1,10 @@
 {
 	"info": {
-		"_postman_id": "038f016b-8a24-4407-a95a-86f313ae8294",
-		"name": "Parking 0.4",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
-		"_exporter_id": "28184234"
+		"_postman_id": "ed54b745-0f9a-45c0-9303-685a1475184d",
+		"name": "Parking - pet project 0.5",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22895689",
+		"_collection_link": "https://winter-satellite-505550.postman.co/workspace/Team-Workspace~88e721a5-e50b-4d32-8329-18aff772f398/collection/22895689-ed54b745-0f9a-45c0-9303-685a1475184d?action=share&source=collection_link&creator=22895689"
 	},
 	"item": [
 		{
@@ -48,7 +49,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/login"
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
 							},
 							"response": []
 						},
@@ -87,7 +99,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -125,7 +148,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -163,7 +197,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -201,7 +246,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -239,7 +295,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -277,7 +344,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -315,7 +393,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -353,7 +442,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -391,7 +491,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/register"
+								"url": {
+									"raw": "http://localhost:8080/auth/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
 							},
 							"response": []
 						},
@@ -430,7 +541,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/login"
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
 							},
 							"response": []
 						},
@@ -469,7 +591,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/auth/login"
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
 							},
 							"response": []
 						},
@@ -497,9 +630,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -512,7 +649,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/0"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"0"
+									]
+								}
 							},
 							"response": []
 						},
@@ -540,9 +689,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -555,7 +708,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -584,9 +749,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -599,7 +768,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -628,9 +809,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -643,7 +828,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -672,9 +869,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -687,7 +888,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -716,9 +929,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -731,7 +948,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -760,9 +989,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -775,7 +1008,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/{{userId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/{{userId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"{{userId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -803,9 +1048,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -818,7 +1067,19 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/users/ioijo"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/ioijo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"ioijo"
+									]
+								}
 							},
 							"response": []
 						},
@@ -846,13 +1107,29 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/personal/users/0"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"0"
+									]
+								}
 							},
 							"response": []
 						},
@@ -880,13 +1157,29 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/personal/users/iui"
+								"url": {
+									"raw": "http://localhost:8080/personal/users/iui",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"users",
+										"iui"
+									]
+								}
 							},
 							"response": []
 						}
@@ -932,7 +1225,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/auth/register"
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": []
 				},
@@ -976,7 +1280,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/auth/register"
+						"url": {
+							"raw": "http://localhost:8080/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1002,9 +1317,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -1017,7 +1336,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/users/{{userId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/users/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"users",
+								"{{userId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1057,7 +1388,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/auth/login"
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1097,7 +1439,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/auth/login"
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1127,13 +1480,29 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/users/{{userId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/users/{{userId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"users",
+								"{{userId}}"
+							]
+						}
 					},
 					"response": []
 				}
@@ -1182,9 +1551,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1197,7 +1570,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1228,9 +1611,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1243,7 +1630,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1274,9 +1671,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1289,7 +1690,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1320,9 +1731,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1335,7 +1750,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1366,9 +1791,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1381,7 +1810,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1412,9 +1851,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1427,7 +1870,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1458,9 +1911,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1473,7 +1930,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1504,9 +1971,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -1519,7 +1990,17 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles"
+								"url": {
+									"raw": "http://localhost:8080/vehicles",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1550,9 +2031,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "PATCH",
 								"header": [],
@@ -1565,7 +2050,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/vehicles/0"
+								"url": {
+									"raw": "http://localhost:8080/vehicles/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles",
+										"0"
+									]
+								}
 							},
 							"response": []
 						},
@@ -1596,13 +2092,28 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/vehicles/0"
+								"url": {
+									"raw": "http://localhost:8080/vehicles/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"vehicles",
+										"0"
+									]
+								}
 							},
 							"response": []
 						}
@@ -1645,9 +2156,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -1660,7 +2175,17 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles"
+						"url": {
+							"raw": "http://localhost:8080/vehicles",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1687,9 +2212,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -1702,7 +2231,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/{{vehicleId}}"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"{{vehicleId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1729,9 +2269,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -1744,7 +2288,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/{{vehicleId}}"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"{{vehicleId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1771,9 +2326,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -1786,7 +2345,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/{{vehicleId}}"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"{{vehicleId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1813,13 +2383,28 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/vehicles/{{vehicleId}}"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/{{vehicleId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"{{vehicleId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1850,9 +2435,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -1865,7 +2454,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1896,9 +2496,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -1911,7 +2515,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1942,9 +2557,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -1957,7 +2576,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -1984,9 +2614,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -1999,7 +2633,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2026,9 +2671,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2041,7 +2690,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2068,9 +2728,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2083,7 +2747,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2110,9 +2785,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -2161,9 +2840,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -2212,9 +2895,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -2263,9 +2950,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -2314,9 +3005,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -2365,9 +3060,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2380,7 +3079,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2407,9 +3117,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2422,7 +3136,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2449,9 +3174,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2464,7 +3193,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2491,9 +3231,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2506,7 +3250,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2533,9 +3288,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -2548,7 +3307,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/vehicles/transfer"
+						"url": {
+							"raw": "http://localhost:8080/vehicles/transfer",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"vehicles",
+								"transfer"
+							]
+						}
 					},
 					"response": []
 				},
@@ -2575,9 +3345,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -2638,9 +3412,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -2701,9 +3479,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -2764,9 +3546,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -2807,7 +3593,7 @@
 			]
 		},
 		{
-			"name": "Spot 0.1",
+			"name": "Spot 0.2",
 			"item": [
 				{
 					"name": "tests",
@@ -2838,9 +3624,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{userToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -2853,7 +3643,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2883,9 +3684,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -2898,7 +3703,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2928,9 +3744,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -2943,7 +3763,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -2973,9 +3804,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -2988,7 +3823,78 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Should throw exception when created Spot if isStoreyed is null",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let serverResponse = pm.response;\r",
+											"console.log(serverResponse);\r",
+											"pm.test(\"Server response must have status code 400 and JSON format data\", function() {\r",
+											"    pm.response.to.have.status(400);\r",
+											"    pm.response.to.be.withBody;\r",
+											"    pm.response.to.be.json;\r",
+											"    var jsonData = pm.response.json();\r",
+											"    pm.expect(jsonData).to.have.property('message');\r",
+											"    pm.expect(jsonData.message).to.include('NotNull.isStoreyed');\r",
+											"});"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{    \r\n    \"latitude\": 23.4222,\r\n    \"longitude\": -136.253521,\r\n    \"isStoreyed\": null, // true,\r\n    \"floor\": 2,\r\n    \"picture\": \"https://parus-msk.ru/wp-content/uploads/shop_property_file_245_857.jpg\",\r\n    \"isHandicapped\": false\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3018,9 +3924,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3033,7 +3943,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3063,9 +3984,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3078,7 +4003,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3108,9 +4044,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{adminToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{adminToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3123,7 +4063,18 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/admin/spots"
+								"url": {
+									"raw": "http://localhost:8080/admin/spots",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"admin",
+										"spots"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3153,13 +4104,29 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{userToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/personal/spots/0"
+								"url": {
+									"raw": "http://localhost:8080/personal/spots/0",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"spots",
+										"0"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3189,13 +4156,29 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{userToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{userToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "GET",
 								"header": [],
-								"url": "http://localhost:8080/personal/spots/fdtfdddrd"
+								"url": {
+									"raw": "http://localhost:8080/personal/spots/fdtfdddrd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"spots",
+										"fdtfdddrd"
+									]
+								}
 							},
 							"response": []
 						}
@@ -3234,9 +4217,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3249,7 +4236,18 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/admin/spots"
+						"url": {
+							"raw": "http://localhost:8080/admin/spots",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"spots"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3286,9 +4284,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{adminToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PATCH",
 						"header": [],
@@ -3301,7 +4303,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/admin/spots/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/admin/spots/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"admin",
+								"spots",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3336,13 +4350,29 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{adminToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{adminToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/spots/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3377,13 +4407,339 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/spots/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"{{spotId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Should create Spot Review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.expect(jsonData).to.have.property('user');\r",
+									"    pm.expect(jsonData.user).to.have.property('id');\r",
+									"    pm.expect(jsonData.user).to.have.property('name');\r",
+									"    pm.expect(jsonData.user).to.have.property('surname');\r",
+									"    pm.expect(jsonData).to.have.property('rating');\r",
+									"    pm.expect(jsonData).to.have.property('comment');\r",
+									"    pm.expect(jsonData).to.have.property('operationStatus');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTMzMzIyMDIiLCJpYXQiOjE3MTYwNzE5MTYsImV4cCI6MTcxNzA3MTkxNn0.sQ1yNqtuoa5FTNZGbRB0zP8x1ScsBsryvCjgGqXrxrxTRCBEzJ3WwyWWdBprzy3ym7oRt9PihrrA2430u6qz2Q"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 4, \r\n    \"comment\": \"Хорошее место, но часто подпирают\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/reviews/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"reviews",
+								"{{spotId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Should get User Reviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Проверка основных свойств\r",
+									"    pm.expect(jsonData).to.have.property('currentPage');\r",
+									"    pm.expect(jsonData).to.have.property('totalPages');\r",
+									"    pm.expect(jsonData).to.have.property('numberOfItems');\r",
+									"    pm.expect(jsonData).to.have.property('totalItems');\r",
+									"    pm.expect(jsonData).to.have.property('user');\r",
+									"    pm.expect(jsonData).to.have.property('reviews');\r",
+									"\r",
+									"    // Проверка вложенного объекта user\r",
+									"    pm.expect(jsonData.user).to.have.property('id');\r",
+									"    pm.expect(jsonData.user).to.have.property('name');\r",
+									"    pm.expect(jsonData.user).to.have.property('surname');\r",
+									"\r",
+									"    // Проверка массива reviews\r",
+									"    pm.expect(jsonData.reviews).to.be.an('array');\r",
+									"    pm.expect(jsonData.reviews[0]).to.have.property('id');\r",
+									"    pm.expect(jsonData.reviews[0]).to.have.property('rating');\r",
+									"    pm.expect(jsonData.reviews[0]).to.have.property('comment');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTMzMzIyMDIiLCJpYXQiOjE3MTYwNzE5MTYsImV4cCI6MTcxNzA3MTkxNn0.sQ1yNqtuoa5FTNZGbRB0zP8x1ScsBsryvCjgGqXrxrxTRCBEzJ3WwyWWdBprzy3ym7oRt9PihrrA2430u6qz2Q"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/reviews/my_reviews?from=0&size=10",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"reviews",
+								"my_reviews"
+							],
+							"query": [
+								{
+									"key": "from",
+									"value": "0"
+								},
+								{
+									"key": "size",
+									"value": "10"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Should get Spot Reviews",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"    var jsonData = pm.response.json();\r",
+									"\r",
+									"    // Проверка основных свойств\r",
+									"    pm.expect(jsonData).to.have.property('currentPage');\r",
+									"    pm.expect(jsonData).to.have.property('totalPages');\r",
+									"    pm.expect(jsonData).to.have.property('numberOfItems');\r",
+									"    pm.expect(jsonData).to.have.property('totalItems');\r",
+									"    pm.expect(jsonData).to.have.property('reviews');\r",
+									"\r",
+									"    // Проверка массива reviews\r",
+									"    pm.expect(jsonData.reviews).to.be.an('array');\r",
+									"    pm.expect(jsonData.reviews).to.have.lengthOf(jsonData.totalItems);\r",
+									"\r",
+									"    // Проверка каждого элемента массива reviews\r",
+									"    jsonData.reviews.forEach(function(review) {\r",
+									"        pm.expect(review).to.have.property('user');\r",
+									"        pm.expect(review.user).to.have.property('id');\r",
+									"        pm.expect(review.user).to.have.property('name');\r",
+									"        pm.expect(review.user).to.have.property('surname');\r",
+									"\r",
+									"        pm.expect(review).to.have.property('review');\r",
+									"        pm.expect(review.review).to.have.property('id');\r",
+									"        pm.expect(review.review).to.have.property('rating');\r",
+									"        pm.expect(review.review).to.have.property('comment');\r",
+									"    });\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTMzMzIyMDIiLCJpYXQiOjE3MTYwNzE5MTYsImV4cCI6MTcxNzA3MTkxNn0.sQ1yNqtuoa5FTNZGbRB0zP8x1ScsBsryvCjgGqXrxrxTRCBEzJ3WwyWWdBprzy3ym7oRt9PihrrA2430u6qz2Q"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/reviews/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"reviews",
+								"{{spotId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Should delete Spot Review",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let serverResponse = pm.response;\r",
+									"pm.test(\"Server response must have status code 200 and JSON format data\", function() {\r",
+									"    pm.response.to.have.status(200);\r",
+									"    pm.response.to.be.withBody;\r",
+									"    pm.response.to.be.json;\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData).to.have.property('id');\r",
+									"    pm.expect(jsonData).to.have.property('userId');\r",
+									"    pm.expect(jsonData).to.have.property('userName');\r",
+									"    pm.expect(jsonData).to.have.property('operationStatus');\r",
+									"});   "
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTMzMzIyMDIiLCJpYXQiOjE3MTYwNzE5MTYsImV4cCI6MTcxNzA3MTkxNn0.sQ1yNqtuoa5FTNZGbRB0zP8x1ScsBsryvCjgGqXrxrxTRCBEzJ3WwyWWdBprzy3ym7oRt9PihrrA2430u6qz2Q"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8080/personal/spots/1/rating",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"spots",
+								"1",
+								"rating"
+							]
+						}
 					},
 					"response": []
 				}
@@ -3417,9 +4773,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3432,7 +4792,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"{{userId}}",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3458,9 +4832,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3473,7 +4851,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/999/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/999/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"999",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3499,9 +4891,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3514,7 +4910,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/{{userId}}/null/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/{{userId}}/null/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"{{userId}}",
+										"null",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3540,9 +4950,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3555,7 +4969,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"{{userId}}",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3581,9 +5009,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3596,7 +5028,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"{{userId}}",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3622,9 +5068,13 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "POST",
 								"header": [],
@@ -3637,7 +5087,21 @@
 										}
 									}
 								},
-								"url": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"{{userId}}",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3663,13 +5127,31 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "http://localhost:8080/personal/bookings/0/{{spotId}}/{{vehicleId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/0/{{spotId}}/{{vehicleId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"0",
+										"{{spotId}}",
+										"{{vehicleId}}"
+									]
+								}
 							},
 							"response": []
 						},
@@ -3695,13 +5177,30 @@
 							"request": {
 								"auth": {
 									"type": "bearer",
-									"bearer": {
-										"token": "{{accessToken}}"
-									}
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{accessToken}}",
+											"type": "string"
+										}
+									]
 								},
 								"method": "DELETE",
 								"header": [],
-								"url": "http://localhost:8080/personal/bookings/0/{{bookingId}}"
+								"url": {
+									"raw": "http://localhost:8080/personal/bookings/0/{{bookingId}}",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"personal",
+										"bookings",
+										"0",
+										"{{bookingId}}"
+									]
+								}
 							},
 							"response": []
 						}
@@ -3732,9 +5231,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3747,7 +5250,21 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{spotId}}/{{vehicleId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"bookings",
+								"{{userId}}",
+								"{{spotId}}",
+								"{{vehicleId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3771,13 +5288,30 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "{{accessToken}}"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{accessToken}}",
+									"type": "string"
+								}
+							]
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": "http://localhost:8080/personal/bookings/{{userId}}/{{bookingId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/bookings/{{userId}}/{{bookingId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"bookings",
+								"{{userId}}",
+								"{{bookingId}}"
+							]
+						}
 					},
 					"response": []
 				}
@@ -3816,9 +5350,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3831,7 +5369,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3857,9 +5408,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3872,7 +5427,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/999/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/999/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"999",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3898,9 +5466,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3913,7 +5485,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/999"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"999"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3939,9 +5524,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3954,7 +5543,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -3980,9 +5582,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -3995,7 +5601,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4021,9 +5640,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4036,7 +5659,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4062,9 +5698,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4077,7 +5717,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4103,9 +5756,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4118,7 +5775,19 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								""
+							]
+						}
 					},
 					"response": []
 				},
@@ -4144,9 +5813,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4159,7 +5832,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4183,13 +5869,31 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/cancel/{{userId}}/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/cancel/{{userId}}/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"cancel",
+								"{{userId}}",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4215,13 +5919,31 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/cancel/999/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/cancel/999/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"cancel",
+								"999",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4247,13 +5969,31 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/cancel/{{userId}}/999"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/cancel/{{userId}}/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"cancel",
+								"{{userId}}",
+								"999"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4279,13 +6019,31 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/cancel/{{secondUserId}}/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/cancel/{{secondUserId}}/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"cancel",
+								"{{secondUserId}}",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4319,9 +6077,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4334,7 +6096,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4367,9 +6142,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
@@ -4418,9 +6197,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
@@ -4476,9 +6259,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
@@ -4527,9 +6314,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
@@ -4586,9 +6377,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
@@ -4601,7 +6396,20 @@
 								}
 							}
 						},
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{spotId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{spotId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4630,9 +6438,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -4692,9 +6504,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -4754,9 +6570,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -4815,9 +6635,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -4880,13 +6704,30 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/{{userId}}/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{userId}}/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{userId}}",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4919,13 +6760,30 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/1/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/1/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"1",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4951,13 +6809,30 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/1/999"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/1/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"1",
+								"999"
+							]
+						}
 					},
 					"response": []
 				},
@@ -4983,13 +6858,30 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": {
-								"token": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w"
-							}
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIrNzk5OTk5OTk5OTkiLCJpYXQiOjE3MTU1MTk0OTEsImV4cCI6MTcxNjUxOTQ5MX0.CZUX_QK3Pysu4w-hfWXlrNlYGFcEqNWykubRYMkkNX-xknG1KXyqPzzJ8q__MTFoBPJG6qEeDNmoN8eadVwr-w",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
-						"url": "http://localhost:8080/personal/requests/{{randomUserId}}/{{tradeRequestId}}"
+						"url": {
+							"raw": "http://localhost:8080/personal/requests/{{randomUserId}}/{{tradeRequestId}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"personal",
+								"requests",
+								"{{randomUserId}}",
+								"{{tradeRequestId}}"
+							]
+						}
 					},
 					"response": []
 				}

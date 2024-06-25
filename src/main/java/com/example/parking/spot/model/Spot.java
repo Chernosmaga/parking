@@ -30,4 +30,16 @@ public class Spot {
     private String picture;
     @Column(name = "is_handicapped", nullable = false)
     private Boolean isHandicapped;
+    @Column(name = "average_rating")
+    private Double averageRating;
+//    private BigDecimal price;
+//    private String currency;
+//    @Column(name = "occupied_from")
+//    private LocalDateTime occupiedFrom;
+//    @Column(name = "occupied_to")
+//    private LocalDateTime occupiedTo;
+//    @ManyToMany
+//    @JoinTable(name = "spots_users", joinColumns = @JoinColumn(name = "spot_id", referencedColumnName = "id"),
+//            inverseJoinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"))
+//    private User subscriber;
 }

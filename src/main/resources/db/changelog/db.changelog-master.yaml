@@ -12,6 +12,8 @@ databaseChangeLog:
   - include:
       file: db/changelog/changeset/create-spots-table.yaml
   - include:
+      file: db/changelog/changeset/create-spots-reviews-table.yaml
+  - include:
       file: db/changelog/changeset/create-booking-table.yaml
   - include:
       file: db/changelog/changeset/create-trade-request-table.yaml
