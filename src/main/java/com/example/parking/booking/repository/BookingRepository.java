@@ -15,5 +15,7 @@ public interface BookingRepository extends JpaRepository<Booking, Long> {
 
     boolean existsBySpot(Spot spot);
 
+    Booking findBySpot(Spot spot);
+
     Page<Booking> findBookingBySpot(Spot spot, Pageable page);
 }

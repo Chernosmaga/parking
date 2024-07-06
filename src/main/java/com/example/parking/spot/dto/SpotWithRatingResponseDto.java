@@ -1,7 +1,7 @@
 package com.example.parking.spot.dto;
 
-import com.example.parking.spot.model.SpotState;
 import com.example.parking.spot.model.SpotRating;
+import com.example.parking.spot.model.SpotState;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

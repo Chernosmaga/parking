@@ -37,7 +37,7 @@ public class BookingServiceImpl implements BookingService {
     @Override
     public BookingFullDto create(Long userId, Long spotId, Long vehicleId ,BookingCreateDto booking) {
         User user = findUser(userId);
-        Spot spot = spotRepository.findById(spotId).orElseThrow( () -> new NotFoundException("Spot's data wasn't found"));
+        Spot spot = spotRepository.findById(spotId).orElseThrow(() -> new NotFoundException("Spot's data wasn't found"));
         if (SpotState.FREE != spot.getSpotState()) {
             throw new AlreadyExistsException("The spot isn't FREE");
         } else if (bookingRepository.existsBySpot(spot)) {
