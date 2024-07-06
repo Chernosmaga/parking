@@ -1,8 +1,7 @@
 package com.example.parking.user.dto;
 
 import com.example.parking.annotation.Phone;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,7 +14,13 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class UserUpdateDto {
     private Long id;
+    @NotEmpty
+    @Size(min = 2)
+    @Pattern(regexp = "^[^0-9]*$")
     private String name;
+    @NotEmpty
+    @Size(min = 2)
+    @Pattern(regexp = "^[^0-9]*$")
     private String surname;
     @Past
     private LocalDate birthdate;

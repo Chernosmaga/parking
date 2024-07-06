@@ -3,8 +3,7 @@ package com.example.parking.spot.mapper;
 import com.example.parking.spot.dto.NewSpotRequestDto;
 import com.example.parking.spot.dto.SpotMainResponseDto;
 import com.example.parking.spot.dto.SpotWithRatingResponseDto;
-import com.example.parking.spot.model.Spot;
-import com.example.parking.spot.model.SpotRating;
+import com.example.parking.spot.model.*;
 import org.mapstruct.Mapper;
 
 import java.util.List;

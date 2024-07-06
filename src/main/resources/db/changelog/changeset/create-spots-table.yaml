@@ -78,3 +78,4 @@ databaseChangeLog:
               VALUES (55.813484, 37.733591, 'OCCUPIED', true, 1, 'https://true-game.ru/wp-content/uploads/78d281e460f4bf294d8302321b19c1e5.webp', true, 1.0);
               INSERT INTO spots (latitude, longitude, spot_state, is_storeyed, floor, picture, is_handicapped, average_rating)
               VALUES (55.813368, 37.733822, 'BLOCKED', true, 1, 'https://true-game.ru/wp-content/uploads/78d281e460f4bf294d8302321b19c1e5.webp', true, 1.0);
+

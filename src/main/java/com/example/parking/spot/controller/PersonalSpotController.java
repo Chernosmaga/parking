@@ -1,9 +1,8 @@
 package com.example.parking.spot.controller;
 
-import com.example.parking.spot.dto.SpotRatingResponseDto;
-import com.example.parking.spot.dto.SpotWithRatingResponseDto;
 import com.example.parking.spot.service.SpotRatingService;
-import com.example.parking.spot.service.SpotService;
+import com.example.parking.spot.dto.*;
+import com.example.parking.spot.service.*;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.Authentication;
