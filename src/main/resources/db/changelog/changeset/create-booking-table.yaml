@@ -62,3 +62,7 @@ databaseChangeLog:
                   type: boolean
                   constraints:
                     nullable: false
+        - sql:
+            sql: |
+              INSERT INTO bookings (booker_id, spot_id, vehicle_id, start_time, end_time, is_tradable, is_paid, bill, is_subscription)
+              VALUES (1, 2, 1, '2024-01-01 14:50:54', '2024-10-01 15:00:00', true, true, 'here is the bill', false);

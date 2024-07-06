@@ -1,5 +1,6 @@
 package com.example.parking.spot.dto;
 
+import com.example.parking.spot.model.SpotRating;
 import com.example.parking.spot.model.SpotState;
 import com.example.parking.spot.model.SpotReviews;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,6 @@ public class SpotWithRatingResponseDto {
     private Short floor;
     private String picture;
     private Boolean isHandicapped;
-    private List<SpotReviews> ratings;
+    private List<SpotRating> ratings;
     private Double averageRating;
 }
